@@ -21,7 +21,7 @@ public class server
 
 			src = new source("TELEMETRY");  // creating source from xmlparser vectors
 
-			//communication loop
+			/* Communication Loop */ 
 			while(true)
 			{
 				sock.receive(incoming);
