@@ -1,0 +1,133 @@
+package network;
+
+import java.io.*;
+import java.net.*;
+import java.util.*;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
+
+public class parsexml {
+
+	
+	static private Vector<String>  foldernames;
+	static private Vector<String> application_ids;
+	static private Vector<Vector<String>> parameternames;
+	static private Vector<Vector<String>> parametertypes;
+	static private Vector<Vector<String>> parameterinfos;
+	static private Vector<Vector<String>> parametermasks;
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		foldernames = new Vector<String>();
+		application_ids = new Vector<String>();
+		parameternames = new Vector<Vector<String>>();
+		parametertypes = new Vector<Vector<String>>();
+		parameterinfos = new Vector<Vector<String>>();
+		parametermasks = new Vector<Vector<String>>();
+		
+		
+		File folder = new File("XML_Examples/");
+		File[] listOfFiles = folder.listFiles();
+		
+		for (File file : listOfFiles) {
+		    if (file.isFile()) 
+		    {
+		    	System.out.println(file.getName());
+		    	try
+		    	{
+		    		
+		    		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			    	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			    	Document doc = dBuilder.parse(file);
+			    	doc.getDocumentElement().normalize();
+			    	
+			    	
+			    	NodeList nList = doc.getElementsByTagName("name");  // name field
+			    	Node nNode = nList.item(0); // name element(node)
+			    	foldernames.addElement(nNode.getTextContent());
+			    	System.out.println(foldernames.get(foldernames.size() - 1));
+			    	
+			    	
+			    	
+			    	nList = doc.getElementsByTagName("configs"); // getting application id 
+			    	nNode = nList.item(0);
+			    	Element eElement = (Element) nNode;
+			    	nList = eElement.getElementsByTagName("config");
+			    	nNode = nList.item(0);
+			    	
+			    	if (nNode.getNodeType() == Node.ELEMENT_NODE)
+			    	{
+			    			
+			    		eElement = (Element) nNode;
+			    		nNode = eElement.getElementsByTagName("tlmmidx").item(0);
+			    		application_ids.addElement(nNode.getTextContent())  ;
+			    		System.out.println(application_ids.get(application_ids.size() - 1));
+			    			
+			    	}
+			    	
+			    	
+			    	nList = doc.getElementsByTagName("telemetry"); // getting telemetry --> name, type, task
+			    	nNode = nList.item(0);
+			    	eElement = (Element) nNode;
+			    	nList = eElement.getElementsByTagName("parameter");
+			    	
+			    	for (int temp = 0; temp < nList.getLength(); temp++) 
+			    	{
+			    		nNode = nList.item(temp);
+			    		if (nNode.getNodeType() == Node.ELEMENT_NODE)
+			    		{
+			    			eElement = (Element) nNode;
+			    			nNode = eElement.getElementsByTagName("name").item(0); //name
+			    			parameternames.get(0).addElement(nNode.getTextContent());
+			    			
+			    			
+			    			nNode = eElement.getElementsByTagName("type").item(0); //type
+			    			parametertypes.get(foldernames.size() - 1).addElement(nNode.getTextContent());
+			    			
+			    			
+			    			nList = eElement.getElementsByTagName("info"); //info
+			    			if(nList.getLength() != 0)
+			    			{
+			    				nNode = nList.item(0);
+			    				parameterinfos.get(foldernames.size() - 1).addElement(nNode.getTextContent());
+			    				
+			    			}
+			    			else
+			    				parameterinfos.get(foldernames.size() - 1).addElement("");
+			    			
+			    			
+			    			nList = eElement.getElementsByTagName("mask"); //mask
+			    			if(nList.getLength() != 0)
+			    			{
+			    				nNode = nList.item(0);
+			    				parametermasks.get(foldernames.size() - 1).addElement(nNode.getTextContent());
+			    				
+			    			}
+			    			else
+			    				parametermasks.get(foldernames.size() - 1).addElement("0xFF");
+			    			
+			    			
+			    		}
+			    	}
+			   
+			    	
+			    	
+		    	}
+		    	
+		    	catch (Exception e) {
+		            e.printStackTrace();
+		         }
+		    }
+		}
+		
+	}
+
+}
+
+

@@ -1,0 +1,176 @@
+package network;
+
+// ---------------------- Search Debug ! ----------------------- //
+
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+
+public class server
+{
+	public static source src;
+    public static void main(String args[]) throws InterruptedException
+    {
+        DatagramSocket sock = null;
+     
+        try
+        {
+            //1. creating a server socket, parameter is local port number
+            sock = new DatagramSocket(1235);
+             
+            //buffer to receive incoming data
+            byte[] buffer = new byte[65536];
+            DatagramPacket incoming = new DatagramPacket(buffer, buffer.length);
+            
+            //2. Wait for an incoming data
+            //echo("-server : Server socket created. Waiting for incoming data...");
+             
+            //src = new source("Telemetry" , 20);  // creating from source class
+            
+            //communication loop
+            /*while(true)
+            {
+                sock.receive(incoming);
+                byte[] data = incoming.getData();
+                
+                //String s = new String(data, 0, incoming.getLength());
+                //System.out.println((int) (data[0] & 0xFF));
+                //System.out.println((int) (data[1] & 0xFF));
+                //parse_DS(data , (short) incoming.getLength());
+                
+            }*/
+            
+      
+            src = new source("Telemetry");  // creating source from xmlparser vectors
+            
+            sock.receive(incoming);
+            byte[] data = incoming.getData();
+            
+            int application_id=(int) ( (data[0] & 0xFF) * 256 + (data[1] & 0xFF)); //parser value
+            src.send(data, application_id);
+            
+        }
+         
+        catch(IOException e)
+        {
+            System.err.println("IOException " + e);
+        }
+    }
+    
+    
+     
+    
+   public static void send_DS(short[] short_array, int[] int_array, long[] long_array, String str)
+   {
+	   
+	  // src.send(short_array , int_array ,  long_array , str);  // send to DataTurbine
+	   
+   }	
+   
+   public static void parse_DS(byte[] data , short size)
+   {
+    	byte x=1;
+    	
+    	
+    	//-----Start parse --------//
+    	
+    	int application_id=(int) ( (data[0] & 0xFF) * 256 + (data[1] & 0xFF));
+    	if(  ( (application_id & (short)(0xFFF)) != (short) (0x8b8) ) )
+    	{
+    		echo("application_id did not match");
+    		x=0;
+    	}
+    	
+    	int ds_sequence_count = (int) ( (data[2] & 0xFF) * 256 + (data[3] & 0xFF));
+    	if(  ( (ds_sequence_count & (short)(0xC000)) != 0 ) )
+    		ds_sequence_count = (int) (0xFFFF);
+    	
+    	int packet_length = (int) ( (data[4] & 0xFF) * 256 + (data[5] & 0xFF));
+    	if(packet_length != size - 7)
+    	{
+    		echo("packet_length did not match");
+    		x=0;
+    	}
+    	
+    	if(x == 1 || x == 0)  // if there is no problem about the above parameters, continue parsing
+    	{
+	    	int i = 12; // starting byte of base parameters
+	    	
+	    	short command_accepted = (short) ( (data[i] & 0xFF) );
+	    	i++;
+	    	
+	    	short command_rejected = (short) ( (data[i] & 0xFF) );
+	    	i++;
+	    	
+	    	short dest_table_load = (short) ( (data[i] & 0xFF) );
+	    	i++;
+	    	
+	    	short dest_table_error = (short) ( (data[i] & 0xFF) );
+	    	i++;
+	    	
+	    	short filter_table_load = (short) ( (data[i] & 0xFF) );
+	    	i++;
+	    	
+	    	short filter_table_error = (short) ( (data[i] & 0xFF) );
+	    	i++;
+	    	
+	    	short app_enable_state = (short) ( (data[i] & 0xFF) );
+	    	i++;
+	    	
+	    	short spare = (short) ( (data[i] & 0xFF) );
+	    	i++;
+	    	
+	    	int file_write = (int) ( (data[i] & 0xFF) * 256 + (data[i+1] & 0xFF));
+	    	i = i+2;
+	    	
+	    	int file_write_error = (int) ( (data[i] & 0xFF) * 256 + (data[i+1] & 0xFF));
+	    	i = i+2;
+	    	
+	    	int file_update = (int) ( (data[i] & 0xFF) * 256 + (data[i+1] & 0xFF));
+	    	i = i+2;
+	    	
+	    	int file_update_error = (int) ( (data[i] & 0xFF) * 256 + (data[i+1] & 0xFF));
+	    	i = i+2;
+	    	
+	    	long disabled_packet = (long) ( (data[i] & 0xFF) * 65536 + (data[i+1] & 0xFF) * 4096 + (data[i+2] & 0xFF) * 256 + (data[i+3] & 0xFF));   
+	    	i = i+4;
+	    	
+	    	long ignored_packet = (long) ( (data[i] & 0xFF) * 65536 + (data[i+1] & 0xFF) * 4096 + (data[i+2] & 0xFF) * 256 + (data[i+3] & 0xFF));  
+	    	i = i+4;
+	    	
+	    	long filtered_packet = (long) ( (data[i] & 0xFF) * 65536 + (data[i+1] & 0xFF) * 4096 + (data[i+2] & 0xFF) * 256 + (data[i+3] & 0xFF));  
+	    	i = i+4;
+	    	
+	    	long passed_packet = (long) ( (data[i] & 0xFF) * 65536 + (data[i+1] & 0xFF) * 4096 + (data[i+2] & 0xFF) * 256 + (data[i+3] & 0xFF)); 
+	    	i = i+4;
+	    	
+	    	String filter_tbl_file_name = "";
+	    	for(;i<size;i++)
+	    	{
+	    		char c = (char) (data[i]);
+	    		filter_tbl_file_name = filter_tbl_file_name + c ;
+	    	}
+	    	
+	    	//-----Finish parse --------//
+	    	
+	    	short[] short_array = {command_accepted , command_rejected ,  dest_table_load , dest_table_error, filter_table_load , filter_table_error, app_enable_state , spare};
+	    	int[] int_array = {application_id , ds_sequence_count , packet_length , file_write , file_write_error, file_update , file_update_error};
+	    	long[] long_array ={disabled_packet , ignored_packet , filtered_packet , passed_packet};
+	    	
+	    	send_DS(short_array , int_array , long_array, filter_tbl_file_name);
+	    	
+    	}
+    	
+    	
+    	
+    	
+    }
+    
+    //simple function to echo data to terminal
+    public static void echo(String msg)
+    {
+        System.out.println(msg);
+    }
+    
+}

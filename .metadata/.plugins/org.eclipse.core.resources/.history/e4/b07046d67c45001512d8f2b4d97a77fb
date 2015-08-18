@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+type: S8, S16, S32, U8, U16, U32, DOUBLE(8 byte), FLOAT(4 byte), STRING, TIME(6 byte)
+future features: mask & hex-dec & binary & unit
+<mask>0x3F</mask>
+<info>""</info>
+-->
+<channel>
+	<name>DS2</name>
+	<configs>
+		<config>
+			<name>CPU1</name>
+			<cmdmid>0x1817</cmdmid>
+			<tlmmid>0x0700</tlmmid>
+			<tlmmidx>0x0803</tlmmidx>
+		</config>
+	</configs>
+	<commandoffset>+0</commandoffset>
+	<commands>
+		<command>
+			<name>CFE_TO_NOP_CC</name>
+		</command>
+		<command>
+			<name>CFE_TO_RESET_STATUS_CC</name>
+		</command>
+	</commands>
+	<telemetry>
+		<parameter>
+			<name>DS App Id2</name>
+			<type>U16</type>	
+		</parameter>
+		<parameter>
+			<name>DS Sequence Count2</name>
+			<type>U8</type>
+			<info>First2</info>
+		</parameter>
+		<parameter>
+			<name>DS Sequence Count2</name>
+			<type>U8</type>
+			<info>First2</info>
+		</parameter>
+		<parameter>
+			<name>DS Length2</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>DS Time2</name>
+			<type>TIME</type>
+		</parameter>
+		<parameter>
+			<name>Command Accepted2</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Command Rejected2</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Dest Table Load2</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Dest Table Error2</name>
+			<type>U8</type>
+			<info>Second</info>
+		</parameter>
+		<parameter>
+			<name>Filter Table Load2</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enable State2</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare2</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>File Write2</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>File Update2</name>
+			<type>FLOAT</type>
+		</parameter>
+		<parameter>
+			<name>Disabled Packet2</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Ignored Packet2</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Filtered Packet2</name>
+			<type>DOUBLE</type>
+		</parameter>
+		<parameter>
+			<name>Filter Tbl File name</name>
+			<type>STRING</type>
+			<size>64</size>
+			
+		</parameter>
+	</telemetry>
+</channel>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConfigRBNB>
+  <Configs>
+    <Config id="sad">
+      <rdv>
+        <rbnb>
+          <host>10.1.21.59</host>
+          <port>3333</port>
+          <state>real time</state>
+          <timeScale>1800.0</timeScale>
+          <playbackRate>1.0</playbackRate>
+        </rbnb>
+        <localChannels/>
+        <dataPanel id="org.rdv.viz.chart.TimeSeriesChartViz">
+          <viewId>1002</viewId>
+          <channels>
+            <channel>TELEMETRY/EVS/App Enabled Status 0</channel>
+            <channel>TELEMETRY/EVS/App ID 0</channel>
+            <channel>TELEMETRY/EVS/App Id</channel>
+            <channel>TELEMETRY/EVS/App Msg Sent Counter 0</channel>
+            <channel>TELEMETRY/EVS/Command Counter</channel>
+            <channel>TELEMETRY/EVS/Error Counter</channel>
+            <channel>TELEMETRY/EVS/Length</channel>
+            <channel>TELEMETRY/EVS/Log Enabled</channel>
+            <channel>TELEMETRY/EVS/Log Full Flag</channel>
+            <channel>TELEMETRY/EVS/Log Mode</channel>
+            <channel>TELEMETRY/EVS/Log Over Flow Counter</channel>
+            <channel>TELEMETRY/EVS/Message Format Mode</channel>
+            <channel>TELEMETRY/EVS/Message Send Counter</channel>
+            <channel>TELEMETRY/EVS/Message Trunc Counter</channel>
+            <channel>TELEMETRY/EVS/Output Port</channel>
+            <channel>TELEMETRY/EVS/Sequence Count</channel>
+            <channel>TELEMETRY/EVS/Spare 0</channel>
+            <channel>TELEMETRY/EVS/Unregister App Counter</channel>
+          </channels>
+        </dataPanel>
+        <dataPanel id="org.rdv.datapanel.DigitalTabularDataPanel">
+          <viewId>1004</viewId>
+          <channels>
+            <channel>TELEMETRY/EVS/App Enabled Status 0</channel>
+            <channel>TELEMETRY/EVS/App ID 0</channel>
+            <channel>TELEMETRY/EVS/App Id</channel>
+            <channel>TELEMETRY/EVS/App Msg Sent Counter 0</channel>
+            <channel>TELEMETRY/EVS/Command Counter</channel>
+            <channel>TELEMETRY/EVS/Error Counter</channel>
+            <channel>TELEMETRY/EVS/Length</channel>
+            <channel>TELEMETRY/EVS/Log Enabled</channel>
+            <channel>TELEMETRY/EVS/Log Full Flag</channel>
+            <channel>TELEMETRY/EVS/Log Mode</channel>
+            <channel>TELEMETRY/EVS/Log Over Flow Counter</channel>
+            <channel>TELEMETRY/EVS/Message Format Mode</channel>
+            <channel>TELEMETRY/EVS/Message Send Counter</channel>
+            <channel>TELEMETRY/EVS/Message Trunc Counter</channel>
+            <channel>TELEMETRY/EVS/Output Port</channel>
+            <channel>TELEMETRY/EVS/Sequence Count</channel>
+            <channel>TELEMETRY/EVS/Spare 0</channel>
+            <channel>TELEMETRY/EVS/Unregister App Counter</channel>
+          </channels>
+          <properties>
+            <entry key="channelTable_TELEMETRY/EVS/Output Port">0,14</entry>
+            <entry key="channelTable_TELEMETRY/EVS/App Enabled Status 0">0,0</entry>
+            <entry key="channelTable_TELEMETRY/EVS/Log Mode">0,9</entry>
+            <entry key="channelTable_TELEMETRY/EVS/Error Counter">0,5</entry>
+            <entry key="channelTable_TELEMETRY/EVS/App Id">0,2</entry>
+            <entry key="channelTable_BLANK"/>
+            <entry key="channelTable_TELEMETRY/EVS/Message Format Mode">0,11</entry>
+            <entry key="channelTable_TELEMETRY/EVS/Message Send Counter">0,12</entry>
+            <entry key="thresholdVisible">true</entry>
+            <entry key="channelTable_TELEMETRY/EVS/Log Full Flag">0,8</entry>
+            <entry key="numberOfColumns">1</entry>
+            <entry key="channelTable_TELEMETRY/EVS/Command Counter">0,4</entry>
+            <entry key="channelTable_TELEMETRY/EVS/Message Trunc Counter">0,13</entry>
+            <entry key="maxMinVisible">true</entry>
+            <entry key="channelTable_TELEMETRY/EVS/Log Over Flow Counter">0,10</entry>
+            <entry key="channelTable_TELEMETRY/EVS/App Msg Sent Counter 0">0,3</entry>
+            <entry key="channelTable_TELEMETRY/EVS/Log Enabled">0,7</entry>
+            <entry key="channelTable_TELEMETRY/EVS/Sequence Count">0,15</entry>
+            <entry key="precision">5</entry>
+            <entry key="channelTable_TELEMETRY/EVS/App ID 0">0,1</entry>
+            <entry key="channelTable_TELEMETRY/EVS/Unregister App Counter">0,17</entry>
+            <entry key="channelTable_TELEMETRY/EVS/Length">0,6</entry>
+            <entry key="channelTable_TELEMETRY/EVS/Spare 0">0,16</entry>
+          </properties>
+        </dataPanel>
+        <panelManager>
+          <type>basic</type>
+          <windowLayout>
+            <tabs>
+              <tab>
+                <title>Default</title>
+                <layout>tiled</layout>
+                <views>
+                  <view>
+                    <id>1002</id>
+                    <attach>true</attach>
+                    <maximize>false</maximize>
+                    <showChannelsInTitle>true</showChannelsInTitle>
+                  </view>
+                  <view>
+                    <id>1004</id>
+                    <attach>true</attach>
+                    <maximize>false</maximize>
+                    <showChannelsInTitle>true</showChannelsInTitle>
+                  </view>
+                </views>
+              </tab>
+            </tabs>
+          </windowLayout>
+        </panelManager>
+      </rdv>
+    </Config>
+  </Configs>
+</ConfigRBNB>

@@ -1,0 +1,29 @@
+RDV
+Real-time Data Viewer
+http://www.nees.org/resources/rdv
+http://nees.org/tools/rdv/wiki
+
+RDV is a visualization environment for scientific and engineering data. Built on
+top of the RBNB dynamic data server, it supports local and remote data sources
+and can visualize numeric, video, image, and audio data in a number of different
+ways. RDV can be extended to support new types of data or visualize data in new
+ways. RDV is free software and can be used without restriction according to the
+conditions of the license. 
+
+To install, unzip the distribution and launch the application by executing the
+following: 
+
+java -jar rdv.jar
+
+To obtain a list of startup options use the following command:
+
+java -jar rdv.jar -?
+
+Note that it is recommended to increase the amount of memory that may be allocated
+to the java heap by supplying the -Xmx option to the JVM.  At least 768MB of memory
+is recommended when visualizing large data sets as in the following example:
+
+java -Xmx768m -jar rdv.jar
+
+See https://www.nees.org/resources/rdv/ and http://rdv.googlecode.com/ for more 
+information.

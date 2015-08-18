@@ -1,0 +1,214 @@
+RDV Release Notes
+
+RDV is a visualization environment for scientific and engineering data. Built on
+top of the RBNB dynamic data server, it supports local and remote data sources
+and can visualize numeric, video, image, and audio data in a number of different
+ways.
+
+Online documentation and support information can be found at: 
+http://www.nees.org/resources/rdv
+http://nees.org/tools/rdv/wiki
+
+Version 2.2.3 - September, 2011
+===============================
+New export features for 3D panels, fixes for graphs with multiple sources.
+
+NEW FEATURES
+- JPEG range export option for Krypton and Model viewer panels.
+- Edit feature in Model viewer panel allows existing nodes and members to be
+  modified.
+
+BUG FIXES
+- Properly handles graphs with data from multiple sources
+- High Resolution panel properly supports aging images
+- Improved reliability of data delivery in real-time mode
+
+Version 2.2.2 - May, 2011
+=============================
+Addition of new docking window layout manager, fonts for digital tabular display,
+and various bug fixes.
+
+NEW FEATURES
+- Docking window layout manager allows expanded control over panel window size
+  and position.
+- Toggle window layout manager under Window menu switches between basic and docking.  
+- Command-line option --window-layout to control default window layout manager.
+  Accepts arguments: basic, docking (basic is default).  
+- Digital tabular display font and precision settings, accessible from right-click
+  menu.
+- Window layout manager-specific options in Window menu.
+
+CHANGES
+- Unsubscribe series data panel menu option. 
+- Rearrange rows in digital tabular display columns with up/down buttons.
+- Setup file format changes (may still load old format).
+
+BUG FIXES
+- Rows stay highlighted in digital tabular display when in real-time mode.
+- Tabular display Take Offsets button resizes rather than overlays Decimal/
+  Engineering buttons when space is limited.
+- Tabular display spaces save and restore properly.
+- Time series panel properly displays X-axis (time) when data endpoints
+  are less than query parameters.
+
+Version 2.2.1 - March, 2011
+=============================
+Point release containing bug fixes and additional functionality to allow editing
+the list of available time ranges and changing the display update rate.
+
+NEW FEATURES
+- Display update rate option to control the rate at which display redraws happen.
+  Includes an Options dialog to set this parameter at run-time and a command-line 
+  option: -u/--update-rate
+- Command-line option --scale-list allows providing a comma-delimited list
+  of time scales to replace the default.  The first scale is set to the default,
+  or a default may be specified using an asterisk (*).  Time scales are in 
+  seconds or may be specified with a unit suffix as follows:
+  ns	nanoseconds
+  us	microseconds
+  ms	milliseconds
+  s		seconds
+  m 	minutes
+  h		hours
+  d		days
+  w		weeks
+  
+CHANGES
+- rdv.jar is now signed for deployment via Web Start
+- Renamed --time-scale (-s) option to --scale
+- Allow specification of units for scale option
+- Documentation updated to point to current URLs
+- Help menu URLs updated
+  
+BUG FIXES
+- Fixed ModelPanel.java to display all data points
+- Fix for ArrayIndexOutOfBounds exception in RBNBTimeSeries getNearestTime() 
+
+Version 2.2.0 - December, 2010
+==============================
+This release contains significant new features for viewing 3D data and images,
+including new Krypton Viewer and High Resolution Image data panels. Support
+was also added for browsing and importing data files directly from NEEShub. A
+number of other improvements have also been added in addition to a few bug fixes.
+
+NEW FEATURES
+- Tabbed main panel to support multiple docking areas for data panels
+- Filmstrip mode for video/photo data panel stacks images to use more of the data
+  panel area
+- High Resolution Image Data Panel added to support sparsely acquired image data
+  from still cameras
+- Krypton Viewer Data Panel added to support visualization of 3D data from Krypton
+  optical measurement systems
+- Save/restore setup from RBNB server
+- Disable local channel mode to lower memory consumption when graphing large 
+  quantities of data
+- Browsing and direct import of data files from NEEShub
+
+IMPROVEMENTS
+- Enhanced monitoring and playback performance to accommodate high data rates
+- Charts can now override the global time range
+- XY charts may now contain multiple plots using the same channel
+- Increased support for large datasets
+
+CHANGES
+- Drop data feature now only applies to Image viewer and Tabular data panel 
+  visualizations
+- Added dedicated pause button
+
+BUG FIXES
+- XY chart corruption when playback rate is high
+- Chart jitter when data sources are not time-synchronized
+- Dial gauge panel no longer draws as an ellipse
+
+Version 2.1.0
+=============
+This release contains support for the importing and exporting of files (both
+RDV-related and otherwise) from NEESCentral. Users can login to NEESCentral from
+RDV and supply a NEESCentral file path or URL to import data to their local
+computer. Users can also export files from their local computer to NEESCentral in
+similar fashion.
+
+This release also updates Lehigh University's 3D-Modeling Viewer for RDV and
+incorporates it into the standard NEES RDV product. 3D-Modeling support is now
+available for MacOSX, Windows, and Linux platforms. Java3D libraries must be
+installed to take advantage of the 3D-Modeling Viewer. More information can be
+found at: https://www.nees.org/it/software/rdv/.
+
+NEW FEATURES
+ - NEESCentral File Import/Export: access data managed in NEESCentral repository.
+ - Lehigh 3D-Modeling Viewer: 3D Model responds to channel-data in real-time.
+
+IMPROVEMENTS
+ - New Import implementation works with new NEESCentral Web Services.
+ - New Export implementation completes bi-directional data access to NEESCentral.
+ - Users may cut and paste file paths or URLS from NEESCentral.
+
+CHANGES
+ - Users will now be shown a login dialog only when NEESCentral features are
+   selected. Login information is cached until expiration or an error occurs.
+
+Version 2.0.0
+=============
+This release contains a new Spectrum Analyzer panel that can be used to visualize
+data in the frequency domain. Also included is the new Virtual Channels feature;
+this feature allows 'local' channels to be created in RDV which are functions of
+one or more standard channels.
+
+NEW FEATURES
+ - Spectrum Analyzer: A panel that can display the FFT and PSD of a channel. [17]
+ - Virtual Channels: 'local' channels can be created that are functions of other
+   channels. [18]
+ 
+IMPROVEMENTS
+ - File dialog's will now remember the directory they previously were browsing.
+   [40]
+ - Added an option to specify the time on the command line. [32]
+
+BUG FIXES
+ - Fixed an error that occurred when importing JPEG's contained in a zip file
+   with certain filenames. [37]
+ - Offline mode will no longer trigger Windows firewall protection. [44]
+ - Fixed an issue where OpenSees data files were imported with incorrect
+   timestamp's and channel names. [46] 
+
+CHANGES
+ - The local time zone will be assumed if none is specified when importing data
+   or JPEG files. GMT was previously assumed. [36]
+ - Drop data is now disabled by default and should only be enabled if needed.
+   [39]
+ - The ability to import data from NEEScentral has been disabled. [38]
+
+Version 1.9.0
+=============
+This release contains significant new features for viewing images and video, a
+new dial visualization, and support for exporting MATLAB files. A number of
+smaller improvements for plotting have been added in addition to a few bug
+fixes.
+
+NEW FEATURES
+  - Support for zooming and panning of an image. A clickable navigation image
+    can be used to jump around parts of an image when zoomed in. [2]
+  - Filmstrip interface to view images sequentially. [3]
+  - Support for viewing a thumbnail of an image to conserve bandwidth. [3]
+  - DialViz, a visualization extension to view a numeric data channel on a dial.
+    [22]
+  - Export of data to the MATLAB MAT-file format. [23]
+  - Support for port knocking authentication. [11]
+
+IMPROVEMENTS
+  - Cursors on an XY plot to indicate the current data point in a series. [1]
+  - Zooming out of a plot via the mouse will remember previous zoom levels. [15]
+  - Support for PNG and GIF images. [24]
+  - Ability to hide the legend in a plot. [13]
+
+BUG FIXES
+  - Can't connect to RBNB server with circular references. [4]
+  - Children of shortcut servers aren't shown in channel list. [5]
+  - Auto adjusting the domain axis in a time series plot does not work
+    correctly. [16]
+
+CHANGES
+  - Plots set to auto range, don't always include zero anymore. [25]
+  - The system look & feel is used now, so RDV should look more native to the
+    platform it is running on. [27]
+  - All RDV class were moved to the "org.rdv" package. [26]

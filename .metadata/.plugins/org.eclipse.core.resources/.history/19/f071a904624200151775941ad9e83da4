@@ -1,0 +1,154 @@
+package network;
+
+import com.rbnb.sapi.*;
+
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class source {
+	
+	private Source source;
+	private ChannelMap cMap;
+	
+	private parsexml xmlparser;
+	
+	private Vector<Vector<Integer>> channelindexes;
+	
+	public source(String tlm)
+	{
+		try
+		{
+			source=new Source();
+			source.OpenRBNBConnection("localhost:3333", tlm);
+			cMap = new ChannelMap();
+			
+			xmlparser = new parsexml();
+			xmlparser.parse();
+			xmlparser.print();
+            
+			channelindexes = new Vector<Vector<Integer>>();
+			
+            createchannels();  // creating seperate channels from parser
+		
+            
+		}
+		
+		catch (SAPIException se) { se.printStackTrace(); }
+		
+	}
+	
+	void createchannels()
+	{
+		
+		int i,j;
+		for(i=0 ; i < (xmlparser.get_foldernames()).size(); i++)
+		{
+			Vector<Integer> indexes = new Vector<Integer>();
+			for(j=0 ; j < ((xmlparser.get_parameternames()).get(i)).size() ; j++)
+			{
+				try
+				{
+					indexes.addElement(cMap.Add((xmlparser.get_foldernames()).get(i) + "/" + ((xmlparser.get_parameternames()).get(i)).get(j)));
+				}
+				catch (SAPIException se) { se.printStackTrace(); }
+			}
+			
+			channelindexes.addElement(indexes);
+			
+		}
+		
+	}
+	
+	public void send(byte[] rawdata , int app_id)   //continued...
+	{
+		int pointer = 0;
+		int i = 0;
+		for(; i < xmlparser.get_applicationids().size(); i++)
+		{
+			if(xmlparser.get_applicationids().get(i) == app_id)
+				break;
+		}
+		
+		
+		for(int j = 0; j < xmlparser.get_parametertypes().get(i).size() ; j++)
+		{
+			if(xmlparser.get_parametertypes().get(i).get(j).equals("S8") || xmlparser.get_parametertypes().get(i).get(j).equals("U8")) // U8 & S8
+			{
+				try
+				{
+					short[] array = new short[1];
+					array[0] = (short) ( (rawdata[pointer] & xmlparser.get_parametermasks().get(i).get(j)) );
+					cMap.PutDataAsInt16(channelindexes.get(i).get(j),array);
+					cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
+					source.Flush(cMap);
+					pointer++;
+				}
+				catch (SAPIException se) { se.printStackTrace(); }
+				
+			}
+			
+			else if(xmlparser.get_parametertypes().get(i).get(j).equals("S16") || xmlparser.get_parametertypes().get(i).get(j).equals("U16")) //S16 & U16
+			{
+				try
+				{
+					int[] array = new int[1];
+					array[0] = (int) (((rawdata[pointer] * 256) & xmlparser.get_parametermasks().get(i).get(j))  + (rawdata[pointer + 1] & xmlparser.get_parametermasks().get(i).get(j)) );
+					cMap.PutDataAsInt32(channelindexes.get(i).get(j),array);
+					cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
+					source.Flush(cMap);
+					pointer = pointer + 2;
+				}
+				catch (SAPIException se) { se.printStackTrace(); }
+			}
+			
+			else if(xmlparser.get_parametertypes().get(i).get(j).equals("S32") || xmlparser.get_parametertypes().get(i).get(j).equals("U32")) //S32 & U32
+			{
+				try
+				{
+					long[] array = new long[1];
+					array[0] = (long) (((rawdata[pointer] * 65536) & xmlparser.get_parametermasks().get(i).get(j)) + ((rawdata[pointer + 1] * 4096) & xmlparser.get_parametermasks().get(i).get(j)) + ((rawdata[pointer + 2] * 256) & xmlparser.get_parametermasks().get(i).get(j))  + (rawdata[pointer + 3] & xmlparser.get_parametermasks().get(i).get(j)) );
+					cMap.PutDataAsInt64(channelindexes.get(i).get(j),array);
+					cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
+					source.Flush(cMap);
+					pointer = pointer + 4;
+				}
+				catch (SAPIException se) { se.printStackTrace(); }
+			}
+			
+			else if(xmlparser.get_parametertypes().get(i).get(j).equals("TIME") ) // TIME
+			{
+				pointer = pointer + 6;
+			}
+			
+			else if(xmlparser.get_parametertypes().get(i).get(j).equals("STRING") ) // STRING
+			{
+				String str = "";
+		    	for(int k = 0 ; k < xmlparser.get_parametersizes().get(i).get(j) ; k++)
+		    	{
+		    		char c = (char) (rawdata[pointer]  & xmlparser.get_parametermasks().get(i).get(j));
+		    		str = str + c ;
+		    		pointer++;
+		    	}
+		    	
+		    	try
+		    	{
+		    		cMap.PutDataAsString(channelindexes.get(i).get(j) , str);
+		    		cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
+		    		source.Flush(cMap);
+		    	}
+		    	catch (SAPIException se) { se.printStackTrace(); }
+			}
+			
+			else if(xmlparser.get_parametertypes().get(i).get(j).equals("FLOAT") ) // FLOAT
+			{
+				
+				
+				
+			}
+		
+		}
+	}
+		
+
+}

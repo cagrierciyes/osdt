@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdv>
+  <rbnb>
+    <host>127.0.0.1</host>
+    <port>3333</port>
+    <state>real time</state>
+    <timeScale>1800.0</timeScale>
+    <playbackRate>1.0</playbackRate>
+  </rbnb>
+  <localChannels/>
+  <dataPanel id="org.rdv.viz.spectrum.SpectrumViz">
+    <viewId>1003</viewId>
+    <channels>
+      <channel>Telemetry/DS/filter_packet</channel>
+    </channels>
+  </dataPanel>
+  <dataPanel id="org.rdv.datapanel.StringDataPanel">
+    <viewId>1002</viewId>
+    <channels>
+      <channel>Telemetry/DS/filter_table_file_name</channel>
+    </channels>
+  </dataPanel>
+  <dataPanel id="org.rdv.datapanel.DigitalTabularDataPanel">
+    <viewId>1000</viewId>
+    <channels>
+      <channel>Telemetry/DS/command_rejected</channel>
+      <channel>Telemetry/DS/dest_table_error</channel>
+      <channel>Telemetry/DS/packet_length</channel>
+      <channel>Telemetry/DS/filter_table_file_name</channel>
+    </channels>
+    <properties>
+      <entry key="channelTable_Telemetry/DS/filter_table_file_name">0,3</entry>
+      <entry key="channelTable_BLANK"/>
+      <entry key="channelTable_Telemetry/DS/dest_table_error">0,1</entry>
+      <entry key="font">Agency FB,0,14</entry>
+      <entry key="useoffset">false</entry>
+      <entry key="channelTable_Telemetry/DS/command_rejected">0,0</entry>
+      <entry key="minThreshold_Telemetry/DS/command_rejected">-Infinity</entry>
+      <entry key="thresholdVisible">true</entry>
+      <entry key="channelTable_Telemetry/DS/packet_length">0,2</entry>
+      <entry key="maxMinVisible">true</entry>
+      <entry key="description">asdasdasd</entry>
+      <entry key="numberOfColumns">1</entry>
+      <entry key="maxThreshold_Telemetry/DS/command_rejected">Infinity</entry>
+    </properties>
+  </dataPanel>
+  <dataPanel id="org.rdv.viz.dial.DialViz">
+    <viewId>1001</viewId>
+    <channels>
+      <channel>Telemetry/DS/filter_table_file_name</channel>
+    </channels>
+  </dataPanel>
+  <panelManager>
+    <type>basic</type>
+    <windowLayout>
+      <tabs>
+        <tab>
+          <title>Default</title>
+          <layout>tiled</layout>
+          <views>
+            <view>
+              <id>1000</id>
+              <attach>true</attach>
+              <maximize>false</maximize>
+              <description>asdasdasd</description>
+              <showChannelsInTitle>true</showChannelsInTitle>
+            </view>
+            <view>
+              <id>1001</id>
+              <attach>true</attach>
+              <maximize>false</maximize>
+              <showChannelsInTitle>true</showChannelsInTitle>
+            </view>
+            <view>
+              <id>1002</id>
+              <attach>true</attach>
+              <maximize>false</maximize>
+              <showChannelsInTitle>true</showChannelsInTitle>
+            </view>
+            <view>
+              <id>1003</id>
+              <attach>true</attach>
+              <maximize>false</maximize>
+              <showChannelsInTitle>true</showChannelsInTitle>
+            </view>
+          </views>
+        </tab>
+      </tabs>
+    </windowLayout>
+  </panelManager>
+</rdv>

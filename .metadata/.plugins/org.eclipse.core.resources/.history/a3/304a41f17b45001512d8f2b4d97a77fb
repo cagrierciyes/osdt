@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+type: S8, S16, S32, U8, U16, U32, DOUBLE(8 byte), FLOAT(4 byte), STRING, TIME(6 byte)
+future features: mask & hex-dec & binary & unit
+<mask>0x3F</mask>
+<info>""</info>
+-->
+<channel>
+	<name>DS3</name>
+	<configs>
+		<config>
+			<name>CPU1</name>
+			<cmdmid>0x1817</cmdmid>
+			<tlmmid>0x0700</tlmmid>
+			<tlmmidx>0x0801</tlmmidx>
+		</config>
+	</configs>
+	<commandoffset>+0</commandoffset>
+	<commands>
+		<command>
+			<name>CFE_TO_NOP_CC</name>
+		</command>
+		<command>
+			<name>CFE_TO_RESET_STATUS_CC</name>
+		</command>
+	</commands>
+	<telemetry>
+		<parameter>
+			<name>DS App Id3</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>DS Sequence Count3</name>
+			<type>U16</type>
+			<info>First</info>
+		</parameter>
+		<parameter>
+			<name>DS Length3</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>DS Time3</name>
+			<type>TIME</type>
+		</parameter>
+		<parameter>
+			<name>Command Accepted3</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Command Rejected3</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Dest Table Load3</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Dest Table Error3</name>
+			<type>U8</type>
+			<info>Second</info>
+		</parameter>
+		<parameter>
+			<name>Filter Table Load3</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Filter Table Error3</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App Enable State3</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare3</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>File Write3</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>File Write Error3</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>File Update3</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>File Update Error3</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Disabled Packet3</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Ignored Packet3</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Filtered Packet3</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Passed Packet3</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Filter Tbl File name3</name>
+			<type>STRING</type>
+			<size>64</size>
+			
+		</parameter>
+	</telemetry>
+</channel>
