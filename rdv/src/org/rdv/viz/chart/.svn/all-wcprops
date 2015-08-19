@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/viz/chart
+END
+ChartPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/viz/chart/ChartPanel.java
+END
+FixedAutoAdjustRangeDateAxis.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/viz/chart/FixedAutoAdjustRangeDateAxis.java
+END
+XYTimeSeriesDataItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/viz/chart/XYTimeSeriesDataItem.java
+END
+FastXYItemRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/viz/chart/FastXYItemRenderer.java
+END
+TimeSeriesChartViz.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/viz/chart/TimeSeriesChartViz.java
+END
+XYTimeSeriesCollection.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/tools/rdv/svn/!svn/ver/55/trunk/src/org/rdv/viz/chart/XYTimeSeriesCollection.java
+END
+FastTimeSeries.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/viz/chart/FastTimeSeries.java
+END
+ChartViz.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/viz/chart/ChartViz.java
+END
+XYTimeSeries.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/viz/chart/XYTimeSeries.java
+END
+XYChartViz.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/viz/chart/XYChartViz.java
+END

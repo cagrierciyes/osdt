@@ -60,27 +60,6 @@ public class source {
 		}
 
 	}
-	
-	public short bytesToShort(byte[] bytes) {
-	     return ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).getShort();
-	}
-	
-	public byte[] shortToBytes(short value) {
-	    return ByteBuffer.allocate(2).order(ByteOrder.LITTLE_ENDIAN).putShort(value).array();
-	}
-	
-	public static int bytesToInt(byte[] b) {
-	    final ByteBuffer bb = ByteBuffer.wrap(b);
-	    bb.order(ByteOrder.LITTLE_ENDIAN);
-	    return bb.getInt();
-	}
-
-	public static byte[] intToBytes(int i) {
-	    final ByteBuffer bb = ByteBuffer.allocate(Integer.SIZE / Byte.SIZE);
-	    bb.order(ByteOrder.LITTLE_ENDIAN);
-	    bb.putInt(i);
-	    return bb.array();
-	}
 
 	public void send(byte[] rawdata , int app_id) throws IOException   //send data to rbnb server
 	{
@@ -143,7 +122,7 @@ public class source {
 						cMap.PutDataAsInt32(channelindexes.get(i).get(j),array);
 						//cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
 						source.Flush(cMap);
-						pointer = pointer + 2;
+						pointer += 2;
 					}
 					catch (SAPIException se) { se.printStackTrace(); }
 				}
@@ -154,11 +133,11 @@ public class source {
 						long[] array = new long[1];
 						
 						if(xmlparser.get_endianfields().get(i).get(j).equals("LE") || ( xmlparser.get_endianfields().get(i).get(j).equals("empty") && xmlparser.get_defaultendians().get(i).equals("LE"))){
-							array[0] = (long) (((rawdata[pointer] & 0xFF) + ((rawdata[pointer+1] & 0xFF) << 8)+ ((rawdata[pointer+2] & 0xFF) << 16)+ ((rawdata[pointer+3] & 0xFF) << 24)) & (xmlparser.get_parametermasks().get(i).get(j) & 0xFFFFFFFF));
+							array[0] = (long) (((rawdata[pointer] & 0xFF) + ((rawdata[pointer+1] & 0xFF) << 8)+ ((rawdata[pointer+2] & 0xFF) << 16)+ ((rawdata[pointer+3] & 0xFF) << 24)) & ((xmlparser.get_parametermasks().get(i).get(j)) & 0x000000007FFFFFFF));
 							System.out.println("LE UINT: " + array[0]);
 						}
 						else{
-							array[0] = (long) (((rawdata[pointer+3] & 0xFF) + ((rawdata[pointer+2] & 0xFF) << 8)+ ((rawdata[pointer+1] & 0xFF) << 16)+ ((rawdata[pointer] & 0xFF) << 24)) & (xmlparser.get_parametermasks().get(i).get(j) & 0xFFFFFFFF));
+							array[0] = (long) (((rawdata[pointer+3] & 0xFF) + ((rawdata[pointer+2] & 0xFF) << 8)+ ((rawdata[pointer+1] & 0xFF) << 16)+ ((rawdata[pointer] & 0xFF) << 24)) & ((xmlparser.get_parametermasks().get(i).get(j)) & 0x000000007FFFFFFF));
 							System.out.println("BE UINT: " +array[0]);
 						}
 
@@ -166,16 +145,62 @@ public class source {
 						cMap.PutDataAsInt64(channelindexes.get(i).get(j),array);
 						//cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
 						source.Flush(cMap);
-						pointer = pointer + 4;
+						pointer += 4;
 					}
 					catch (SAPIException se) { se.printStackTrace(); }
 				}
+				else if(xmlparser.get_parametertypes().get(i).get(j).equals("FLOAT") ) // FLOAT
+				{
+					try{
 
+						float[] array = new float[1];
+						byte[] bytes = { rawdata[pointer] , rawdata[pointer + 1] , rawdata[pointer + 2] , rawdata[pointer + 3]};
+
+						if(xmlparser.get_endianfields().get(i).get(j).equals("LE") || ( xmlparser.get_endianfields().get(i).get(j).equals("empty") && xmlparser.get_defaultendians().get(i).equals("LE"))){
+							array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).getFloat();
+							System.out.println("LE FLOAT: " + array[0]);
+						}
+						else{
+							array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).getFloat();
+							System.out.println("BE FLOAT: " + array[0]);
+						}
+							
+						cMap.PutDataAsFloat32(channelindexes.get(i).get(j),array);
+						//cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
+						source.Flush(cMap);
+						pointer += 4;
+					}
+					catch (SAPIException se) { se.printStackTrace(); }
+
+				}
+				else if(xmlparser.get_parametertypes().get(i).get(j).equals("DOUBLE") ) // DOUBLE
+				{
+					try{
+
+						double[] array = new double[1];
+						byte[] bytes = { rawdata[pointer] , rawdata[pointer + 1] , rawdata[pointer + 2] , rawdata[pointer + 3] , rawdata[pointer + 4] , rawdata[pointer + 5] , rawdata[pointer + 6] , rawdata[pointer + 7]}; 
+						
+						if(xmlparser.get_endianfields().get(i).get(j).equals("LE") || ( xmlparser.get_endianfields().get(i).get(j).equals("empty") && xmlparser.get_defaultendians().get(i).equals("LE"))){
+							array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).getDouble();
+							System.out.println("LE DOUBLE: " + array[0]);
+						}
+						else{
+							array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).getDouble();
+							System.out.println("BE DOUBLE: " + array[0]);
+						}
+						
+						cMap.PutDataAsFloat64(channelindexes.get(i).get(j),array);
+						//cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
+						source.Flush(cMap);
+						pointer += 8;
+					}
+					catch (SAPIException se) { se.printStackTrace(); }
+
+				}
 				else if(xmlparser.get_parametertypes().get(i).get(j).equals("TIME") ) // TIME
 				{
-					pointer = pointer + 6;
+					pointer += 6;
 				}
-
 				else if(xmlparser.get_parametertypes().get(i).get(j).equals("STRING") ) // STRING
 				{
 					String str = "";
@@ -194,80 +219,6 @@ public class source {
 					}
 					catch (SAPIException se) { se.printStackTrace(); }
 				}
-
-				else if(xmlparser.get_parametertypes().get(i).get(j).equals("FLOAT") ) // FLOAT
-				{
-					try{
-
-						float[] array = new float[1];
-						byte[] bytes = { rawdata[pointer] , rawdata[pointer + 1] , rawdata[pointer + 2] , rawdata[pointer + 3]};
-
-						if(xmlparser.get_endianfields().get(i).get(j).equals("empty") )
-						{
-							if(xmlparser.get_defaultendians().get(i).equals("LE") )
-							{
-								array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).getFloat();
-							}
-							else
-							{
-								array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).getFloat();
-							}
-						}
-
-						else
-						{
-							if(xmlparser.get_endianfields().get(i).get(j).equals("LE") )
-								array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).getFloat();
-							else
-								array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).getFloat();
-						}
-						
-						cMap.PutDataAsFloat32(channelindexes.get(i).get(j),array);
-						//cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
-						source.Flush(cMap);
-						pointer = pointer + 4;
-					}
-					catch (SAPIException se) { se.printStackTrace(); }
-
-				}
-
-				else if(xmlparser.get_parametertypes().get(i).get(j).equals("DOUBLE") ) // DOUBLE
-				{
-					try{
-
-						double[] array = new double[1];
-						byte[] bytes = { rawdata[pointer] , rawdata[pointer + 1] , rawdata[pointer + 2] , rawdata[pointer + 3] , rawdata[pointer + 4] , rawdata[pointer + 5] , rawdata[pointer + 6] , rawdata[pointer + 7]}; 
-
-						if(xmlparser.get_endianfields().get(i).get(j).equals("empty") )
-						{
-							if(xmlparser.get_defaultendians().get(i).equals("LE") )
-							{
-								array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).getDouble();
-							}
-							else
-							{
-								array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).getDouble();
-							}
-						}
-
-						else
-						{
-							if(xmlparser.get_endianfields().get(i).get(j).equals("LE") )
-								array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).getDouble();
-							else
-								array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).getDouble();
-						}
-
-
-						cMap.PutDataAsFloat64(channelindexes.get(i).get(j),array);
-						//cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
-						source.Flush(cMap);
-						pointer = pointer + 8;
-					}
-					catch (SAPIException se) { se.printStackTrace(); }
-
-				}
-
 				else
 				{
 					System.out.println(" XML TYPE ERROR / APID: " + app_id);
@@ -279,6 +230,7 @@ public class source {
 		}
 	}
 }
+
 /*
 0x08 0x01 
 0xC0 0x02 

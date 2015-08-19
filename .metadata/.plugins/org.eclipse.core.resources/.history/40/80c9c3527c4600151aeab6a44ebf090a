@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+type: S8, S16, S32, U8, U16, U32, DOUBLE(8 byte), FLOAT(4 byte), STRING, TIME(6 byte)
+future features: mask & hex-dec & binary & unit
+<mask>0x3F</mask>
+<info>""</info>
+-->
+<channel>
+	<name>EVS</name>
+	<configs>
+		<config>
+			<name>CPU1</name>
+			<cmdmid>0x1817</cmdmid>
+			<tlmmid>0x0700</tlmmid>
+			<tlmmidx>0x0801</tlmmidx>
+			<endian>LE</endian>
+		</config>
+	</configs>
+	<commandoffset>+0</commandoffset>
+	<commands>
+		<command>
+			<name>CFE_EVS_NOP_CC</name>
+		</command>
+		<command>
+			<name>CFE_EVS_RESET_STATUS_CC</name>
+		</command>
+	</commands>
+	<telemetry>
+		<parameter>
+			<name>App Id</name>
+			<type>U16</type>
+			<endian>BE</endian>
+		</parameter>
+		<parameter>
+			<name>Sequence Count</name>
+			<type>U16</type>
+			<mask>0x3FFF</mask>
+			<endian>BE</endian>
+		</parameter>
+		<parameter>
+			<name>Length</name>
+			<type>U16</type>
+			<endian>BE</endian>
+		</parameter>
+		<parameter>
+			<name>Time</name>
+			<type>TIME</type>
+		</parameter>
+		<parameter>
+			<name>Command Counter</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Error Counter</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Message Format Mode</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Message Trunc Counter</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Unregister App Counter</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Output Port</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Log Full Flag</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Log Mode</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Message Send Counter</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Log Over Flow Counter</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Log Enabled</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 0</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 0</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 0</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 0</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 1</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 1</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 1</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 1</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 2</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 2</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 2</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 2</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 3</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 3</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 3</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 3</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 4</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 4</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 4</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 4</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 5</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 5</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 5</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 5</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 6</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 6</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 6</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 6</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 7</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 7</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 7</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 7</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 8</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 8</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 8</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 8</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 9</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 9</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 9</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 9</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 10</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 10</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 10</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 10</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 11</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 11</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 11</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 11</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 12</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 12</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 12</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 12</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 13</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 13</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 13</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 13</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 14</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 14</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 14</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 14</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 15</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 15</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 15</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 15</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 16</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 16</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 16</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 16</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 17</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 17</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 17</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 17</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 18</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 18</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 18</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 18</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 19</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 19</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 19</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 19</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 20</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 20</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 20</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 20</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 21</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 21</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 21</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 21</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 22</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 22</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 22</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 22</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 23</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 23</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 23</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 23</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 24</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 24</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 24</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 24</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 25</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 25</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 25</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 25</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 26</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 26</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 26</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 26</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 27</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 27</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 27</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 27</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 28</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 28</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 28</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 28</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 29</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 29</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 29</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 29</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 30</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 30</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 30</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 30</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 31</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 31</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 31</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare 31</name>
+			<type>U8</type>
+		</parameter>
+	</telemetry>
+</channel>

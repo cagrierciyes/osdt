@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1439996440388_1" label="RDV" name="RDV">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/rdv" type="4"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1438801600863_0" label="Window Working Set" name="Aggregate for window 1438801600861"/>
 </workingSetManager>

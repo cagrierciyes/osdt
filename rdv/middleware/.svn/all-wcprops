@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/tools/rdv/svn/!svn/ver/105/trunk/middleware
+END
+invoke
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/tools/rdv/svn/!svn/ver/105/trunk/middleware/invoke
+END

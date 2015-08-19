@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/auth
+END
+Authentication.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/auth/Authentication.java
+END
+AuthenticationEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/auth/AuthenticationEvent.java
+END
+AuthenticationListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/auth/AuthenticationListener.java
+END
+GridAuthentication.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/auth/GridAuthentication.java
+END
+AuthenticationManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/auth/AuthenticationManager.java
+END

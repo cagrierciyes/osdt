@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/datapanel
+END
+ModelPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/datapanel/ModelPanel.java
+END
+SeriesFixedWidthTitleFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/datapanel/SeriesFixedWidthTitleFormatter.java
+END
+StringDataPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/datapanel/StringDataPanel.java
+END
+DigitalTabularDataPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/datapanel/DigitalTabularDataPanel.java
+END
+PanelTitleFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/tools/rdv/svn/!svn/ver/55/trunk/src/org/rdv/datapanel/PanelTitleFormatter.java
+END
+TemplateDataPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/datapanel/TemplateDataPanel.java
+END
+WebDataPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/datapanel/WebDataPanel.java
+END
+KryptonViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/datapanel/KryptonViewer.java
+END
+DataPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/datapanel/DataPanel.java
+END
+DescriptionTitleFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/datapanel/DescriptionTitleFormatter.java
+END
+AbstractDataPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/datapanel/AbstractDataPanel.java
+END

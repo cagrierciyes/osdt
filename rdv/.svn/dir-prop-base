@@ -1,0 +1,12 @@
+K 10
+svn:ignore
+V 20
+build
+
+build.number
+
+K 13
+svn:mergeinfo
+V 19
+/branches/2.2:23-31
+END

@@ -1,0 +1,22 @@
+version.number = 2.2.4
+
+src.dir=${basedir}/src
+tests.dir=${basedir}/tests
+lib.dir=${basedir}/lib
+config.dir=${basedir}/config
+icons.dir=${basedir}/icons
+
+resources.dir=${basedir}/resources
+jnlp.dir=${basedir}/jnlp
+build.dir=${basedir}/build
+build.classes=${build.dir}/classes
+build.tests=${build.dir}/tests
+
+build.bin=${build.dir}/bin
+build.lib=${build.bin}/lib
+build.dist=${build.dir}/dist
+build.exe=${build.dir}/exe
+build.mac=${build.dir}/mac
+build.api=${build.dir}/api
+
+key.alias=university of minnesota's internet2 id

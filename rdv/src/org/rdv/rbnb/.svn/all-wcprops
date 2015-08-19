@@ -1,0 +1,305 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb
+END
+RBNBException.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/RBNBException.java
+END
+RBNBTime.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/rbnb/RBNBTime.java
+END
+SubscriptionResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/SubscriptionResponse.java
+END
+TimeListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/TimeListener.java
+END
+PlaybackRateListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/PlaybackRateListener.java
+END
+SimpleResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/68/trunk/src/org/rdv/rbnb/SimpleResponse.java
+END
+TimeRange.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/rbnb/TimeRange.java
+END
+MetadataManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/MetadataManager.java
+END
+RBNBTimeSeries.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/RBNBTimeSeries.java
+END
+RBNBQueryContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/rbnb/RBNBQueryContext.java
+END
+RBNBUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/RBNBUtilities.java
+END
+NextDataFetch.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/NextDataFetch.java
+END
+QueryResponse.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/QueryResponse.java
+END
+RBNBExport.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/RBNBExport.java
+END
+MetadataListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/MetadataListener.java
+END
+StateListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/StateListener.java
+END
+RBNBDataRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/RBNBDataRequest.java
+END
+RBNBController.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/RBNBController.java
+END
+EventMarkerListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/EventMarkerListener.java
+END
+SubscriptionListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/SubscriptionListener.java
+END
+Player.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/rbnb/Player.java
+END
+DataTurbine.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/DataTurbine.java
+END
+TimeSeriesData.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/TimeSeriesData.java
+END
+ChannelManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/ChannelManager.java
+END
+RBNBConnection.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/RBNBConnection.java
+END
+RBNBSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/RBNBSource.java
+END
+QRAFixedTypeAndRange.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/rbnb/QRAFixedTypeAndRange.java
+END
+QRAChart.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/rbnb/QRAChart.java
+END
+ConnectionListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/ConnectionListener.java
+END
+RBNBReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/tools/rdv/svn/!svn/ver/67/trunk/src/org/rdv/rbnb/RBNBReader.java
+END
+RBNBQuery.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/RBNBQuery.java
+END
+QueryDataFetch.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/rbnb/QueryDataFetch.java
+END
+ProgressListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/ProgressListener.java
+END
+RBNBChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/RBNBChannel.java
+END
+MarkerManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/MarkerManager.java
+END
+TimeScaleListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/68/trunk/src/org/rdv/rbnb/TimeScaleListener.java
+END
+RBNBImport.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/RBNBImport.java
+END
+DataListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/DataListener.java
+END
+QRAFixedRange.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/rbnb/QRAFixedRange.java
+END
+LocalServer.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/rbnb/LocalServer.java
+END
+AbsoluteDataFetch.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/rbnb/AbsoluteDataFetch.java
+END
+EventMarker.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/EventMarker.java
+END
+RBNBHelper.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/RBNBHelper.java
+END
+MultiTimeSeries.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/MultiTimeSeries.java
+END
+QueryRequestAggregate.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/QueryRequestAggregate.java
+END
+TimeSeriesSlice.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/TimeSeriesSlice.java
+END
+MessageListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/rbnb/MessageListener.java
+END
+MonitorDataFetch.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/rbnb/MonitorDataFetch.java
+END
+TimeSeriesComposite.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/TimeSeriesComposite.java
+END
+SubscriptionRequest.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/rbnb/SubscriptionRequest.java
+END

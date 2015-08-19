@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/tools/rdv/svn/!svn/ver/85/trunk/resources/org/rdv/ui/resources
+END
+AboutDialog.properties
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/tools/rdv/svn/!svn/ver/38/trunk/resources/org/rdv/ui/resources/AboutDialog.properties
+END
+LicenseDialog.properties
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/tools/rdv/svn/!svn/ver/9/trunk/resources/org/rdv/ui/resources/LicenseDialog.properties
+END

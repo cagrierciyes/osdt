@@ -1,0 +1,19 @@
+#Properties updated by Jigloo
+#Fri Mar 11 17:06:55 CST 2011
+
+Options.resizable=false
+Options.title=Options
+
+jTextArea1.editable=false
+jTextArea1.font=Dialog-PLAIN-11
+jTextArea1.opaque=false
+jTextArea1.text=Display Update Rate
+
+jTextArea2.editable=false
+jTextArea2.font=Dialog-PLAIN-11
+jTextArea2.opaque=false
+jTextArea2.text=Hz
+
+updateRatePanel.font=Tahoma-PLAIN-11
+
+updateRateTxt.text=3

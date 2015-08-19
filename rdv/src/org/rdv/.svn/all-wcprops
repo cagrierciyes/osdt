@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv
+END
+ConfigurationManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ConfigurationManager.java
+END
+DockingDataPanelManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/DockingDataPanelManager.java
+END
+DataPanelManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/DataPanelManager.java
+END
+PanelManagerView.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tools/rdv/svn/!svn/ver/53/trunk/src/org/rdv/PanelManagerView.java
+END
+TimeScalesChangeListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/37/trunk/src/org/rdv/TimeScalesChangeListener.java
+END
+TimeScale.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/tools/rdv/svn/!svn/ver/37/trunk/src/org/rdv/TimeScale.java
+END
+ManagerStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ManagerStore.java
+END
+ExtensionManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ExtensionManager.java
+END
+PanelManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/PanelManager.java
+END
+DataViewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/DataViewer.java
+END
+RDV.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/RDV.java
+END
+Extension.java
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/Extension.java
+END
+AppProperties.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/AppProperties.java
+END
+PanelLayout.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/tools/rdv/svn/!svn/ver/53/trunk/src/org/rdv/PanelLayout.java
+END

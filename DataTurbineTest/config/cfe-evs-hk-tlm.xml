@@ -91,6 +91,18 @@ future features: mask & hex-dec & binary & unit
 			<type>U8</type>
 		</parameter>
 		<parameter>
+			<name>Spare</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
 			<name>App ID 0</name>
 			<type>U32</type>
 		</parameter>

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/tools/rdv/svn/!svn/ver/34/trunk/mac
+END
+Info.plist
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/tools/rdv/svn/!svn/ver/34/trunk/mac/Info.plist
+END
+rdv.icns
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/tools/rdv/svn/!svn/ver/9/trunk/mac/rdv.icns
+END
+PkgInfo
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/tools/rdv/svn/!svn/ver/9/trunk/mac/PkgInfo
+END

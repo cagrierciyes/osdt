@@ -1,0 +1,4 @@
+
+I found the following license on Sourceforge.
+Here is the link to where it was listed: http://sourceforge.net/projects/jexcelapi/
+GNU Library or Lesser General Public License version 2.0 (LGPLv2)

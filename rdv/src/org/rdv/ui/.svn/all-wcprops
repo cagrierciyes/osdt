@@ -1,0 +1,323 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui
+END
+PopupMenuBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/48/trunk/src/org/rdv/ui/PopupMenuBuilder.java
+END
+TimeEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/TimeEvent.java
+END
+MetadataPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/MetadataPanel.java
+END
+TimeSlider.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/TimeSlider.java
+END
+ExportDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/tools/rdv/svn/!svn/ver/70/trunk/src/org/rdv/ui/ExportDialog.java
+END
+NCGetFileDialog2.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/NCGetFileDialog2.java
+END
+BusyDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/BusyDialog.java
+END
+MainPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/MainPanel.java
+END
+ConfigSaveFileDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/ConfigSaveFileDialog.java
+END
+MessagePopup.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/MessagePopup.java
+END
+TabListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/ui/TabListener.java
+END
+SelectableCheckBoxMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/SelectableCheckBoxMenuItem.java
+END
+ChannelSelectionEvent.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/ChannelSelectionEvent.java
+END
+ConsoleDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/ConsoleDialog.java
+END
+ChannelSelectionListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/ChannelSelectionListener.java
+END
+ChannelListPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/ChannelListPanel.java
+END
+MarkerSubmitPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/MarkerSubmitPanel.java
+END
+ConfigLoadFileDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/ConfigLoadFileDialog.java
+END
+ExportVideoDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/ExportVideoDialog.java
+END
+AboutDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/ui/AboutDialog.java
+END
+ImportDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/ImportDialog.java
+END
+NCPutFileDialog2.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/NCPutFileDialog2.java
+END
+DataPanelContainer.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/DataPanelContainer.java
+END
+AudioPlayerPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/AudioPlayerPanel.java
+END
+ControlPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/ControlPanel.java
+END
+LicenseDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/LicenseDialog.java
+END
+TimeAdjustmentListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/TimeAdjustmentListener.java
+END
+RDVIcon.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/RDVIcon.java
+END
+DataViewerCheckBoxMenuItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/DataViewerCheckBoxMenuItem.java
+END
+ConfigSaveRBNBDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/ConfigSaveRBNBDialog.java
+END
+ChannelListDataFlavor.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/ChannelListDataFlavor.java
+END
+ChannelTreeModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/ChannelTreeModel.java
+END
+FontChooserDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/FontChooserDialog.java
+END
+ApplicationApplet.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/ApplicationApplet.java
+END
+ProgressWindowModal.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/ProgressWindowModal.java
+END
+UIUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/UIUtilities.java
+END
+OSXAdapter.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/OSXAdapter.java
+END
+OptionsDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/OptionsDialog.java
+END
+DateTimeDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/DateTimeDialog.java
+END
+ChannelTreeCellRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/ChannelTreeCellRenderer.java
+END
+RBNBConnectionDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/RBNBConnectionDialog.java
+END
+TabbedPane.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/ui/TabbedPane.java
+END
+AdjustThresholdDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/AdjustThresholdDialog.java
+END
+LoginDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/LoginDialog.java
+END
+ChannelSelectDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/ChannelSelectDialog.java
+END
+ConfigLoadRBNBDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/ConfigLoadRBNBDialog.java
+END
+RemoteFilesListDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/RemoteFilesListDialog.java
+END
+ScrollablePopupMenu.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/ScrollablePopupMenu.java
+END
+ProgressWindow.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/ProgressWindow.java
+END
+LoadingDialog.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/LoadingDialog.java
+END
+ChannelListTransferable.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/ui/ChannelListTransferable.java
+END
+SpringUtilities.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/ui/SpringUtilities.java
+END
+ToolBarButton.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/103/trunk/src/org/rdv/ui/ToolBarButton.java
+END

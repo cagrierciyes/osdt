@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/tools/rdv/svn/!svn/ver/34/trunk/docs
+END
+Example.txt
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/tools/rdv/svn/!svn/ver/9/trunk/docs/Example.txt
+END
+ExampleModel.txt
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/tools/rdv/svn/!svn/ver/9/trunk/docs/ExampleModel.txt
+END

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#add java path if necessary
+which java > /dev/null || export PATH=/apps/bin:$PATH
+
+if [ "$1" == "" ]; then
+	binpath="."
+else
+	binpath=$1
+fi
+
+libpath=${binpath}/../lib
+export J3D_HOME=/usr/share/java
+export LD_LIBRARY_PATH=/usr/lib/jni
+
+# the jar now contains these libraries
+#java -Xmx768m -cp ${libpath}/AppFramework.jar:${libpath}/commons-cli.jar:${libpath}/commons-logging.jar:${libpath}/jcommon.jar:${libpath}/jfreechart.jar:${libpath}/jtransforms.jar:${libpath}/meparser.jar:${libpath}/rbnb.jar:${libpath}/swing-worker.jar:${libpath}/tritonus_share.jar:${libpath}/httpmime.jar:${libpath}/httpcore.jar:${libpath}/httpcore-nio.jar:${libpath}/httpclient.jar:${libpath}/commons-codec.jar:${libpath}/apache-mime4j.jar:${libpath}/jl.jar:${libpath}/mp3spi.jar:${J3D_HOME}/j3dcore.jar:${J3D_HOME}/j3dutils.jar:${J3D_HOME}/vecmath.jar:${binpath}/rdv.jar org.rdv.RDV
+
+# removed java3d as it will be awhile before the hub supports a more current version of glx
+#java -Xmx768m -cp ${J3D_HOME}/j3dcore.jar:${J3D_HOME}/j3dutils.jar:${J3D_HOME}/vecmath.jar:${binpath}/rdv.jar org.rdv.RDV
+java -Xmx768m -cp ${binpath}/rdv.jar org.rdv.RDV
+
+[[ $? -eq 1 ]] && (echo "Usage: run_RDV [binpath where run_RDV is located]"; echo "       //[binpath] can be skipped if run_RDV is launched in app-rdv/bin directory")
+

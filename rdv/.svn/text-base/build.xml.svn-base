@@ -1,0 +1,377 @@
+<?xml version="1.0"?>
+
+<project name="rdv" default="compile" basedir=".">
+
+    <buildnumber/>
+    <property name="application.name" value="RDV" />
+    <property name="application.id" value="rdv" />
+
+    <!-- compile with debugging information -->
+    <property name="debug" value="on" />
+
+    <!-- get version information -->
+    <property file="build.properties" />
+    <property name="version" value="${version.number}" />
+
+    <property name="main.class" value="org.rdv.RDV" />
+
+    <!-- environment access via env.* -->
+    <property environment="env" />
+
+    <property name="j3d.dir" value="${env.J3D_HOME}" />
+
+    <property name="keystore.dir" value="${env.KEYSTORE}" />
+
+    <!-- build classpath -->
+    <path id="classpath">
+        <fileset dir="${lib.dir}">
+            <include name="AppFramework.jar" />
+            <include name="commons-cli.jar" />
+            <include name="commons-logging.jar" />
+            <include name="commons-io.jar" />
+            <include name="jcommon.jar" />
+            <include name="jfreechart.jar" />
+            <include name="jtransforms.jar" />
+            <include name="meparser.jar" />
+            <include name="rbnb.jar" />
+            <include name="swing-worker.jar" />
+            <include name="tritonus_share.jar" />
+            <include name="httpmime.jar" />
+            <include name="httpcore.jar" />
+            <include name="httpcore-nio.jar" />
+            <include name="httpclient.jar" />
+            <include name="idw-gpl.jar" />
+            <include name="commons-codec.jar" />
+            <include name="apache-mime4j.jar" />
+            <include name="commons-net.jar" />
+        	<include name="j3dcore.jar" />
+        	<include name="j3dutils.jar"/>
+        	<include name="vecmath.jar"/>
+        </fileset>
+        <fileset dir="${j3d.dir}">
+            <include name="j3dcore.jar" />
+            <include name="j3dutils.jar" />
+            <include name="vecmath.jar" />
+        </fileset>
+    </path>
+
+    <!-- runtime classpath -->
+    <path id="runtimeclasspath">
+        <pathelement location="${build.classes}" />
+        <pathelement location="${src.dir}" />
+        <pathelement location="." />
+        <pathelement location="${resources.dir}" />
+        <path refid="classpath" />
+        <fileset dir="${lib.dir}">
+            <include name="jl.jar" />
+            <include name="mp3spi.jar" />
+        </fileset>
+    </path>
+
+    <target name="init">
+        <echo message="j3dhome = ${j3ddir}" />
+        <echo message="ilib path= ${java.library.path}" />
+        <echo message="class path= ${java.class.path}" />
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.classes}"/>
+        <mkdir dir="${build.tests}"/>
+        <mkdir dir="${build.lib}"/>
+        <mkdir dir="${build.bin}"/>
+        <mkdir dir="${build.dist}"/>
+        <mkdir dir="${build.exe}"/>
+        <mkdir dir="${build.mac}"/>
+        <mkdir dir="${build.api}"/>
+        <copy todir="${build.lib}">
+            <fileset dir="${lib.dir}" >
+                <include name="*.jar"/>
+                <include name="*.txt"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="checkLaunch4j" unless="env.LAUNCH4J_HOME">
+        <fail message="LAUNCH4J_HOME must be defined in your environment." />
+    </target>
+
+    <target name="clean" description="Remove all generated files">
+        <delete dir="${build.dir}" />
+    </target>
+
+    <target name="runme" description="blah">
+        <java jar="build/bin/rdv.jar" fork="true">
+            <sysproperty key="java.library.path" value="${java.library.path}" />
+        </java>
+
+    </target>
+
+    <!-- Build target -->
+    <target name="compile" depends="init" description="Build from source">
+        <mkdir dir="${build.classes}" />
+
+        <javac srcdir="${src.dir}" destdir="${build.classes}" classpathref="classpath" source="1.5" target="1.5" debug="${debug}">
+        </javac>
+    </target>
+
+    <!-- Build jar -->
+    <target name="jar" depends="compile" description="Build jar">
+        <jar destfile="${build.bin}/${ant.project.name}.jar">
+            <fileset dir="${build.classes}" />
+            <fileset dir="${src.dir}">
+                <include name="**/*.properties"/>
+            </fileset>
+            <fileset file="rdv.properties" />
+            <fileset file="commons-logging.properties" />
+            <fileset file="LICENSE.txt" />
+            <zipfileset dir="${config.dir}" prefix="config" />
+            <zipfileset dir="${icons.dir}" prefix="icons" />
+            <zipfileset dir="${resources.dir}" />
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}" />
+                <attribute name="Class-Path" value="lib/AppFramework.jar lib/commons-cli.jar lib/commons-logging.jar lib/jcommon.jar lib/jfreechart.jar lib/jl.jar lib/jtransforms.jar lib/meparser.jar lib/mp3spi.jar lib/rbnb.jar lib/swing-worker.jar lib/tritonus_share.jar lib/httpmime.jar lib/httpcore.jar lib/httpcore-nio.jar lib/httpclient.jar lib/idw-gpl.jar lib/commons-codec.jar lib/apache-mime4j.jar lib/commons-net.jar lib/commons-io.jar lib/j3dcore.jar lib/j3dutils.jar lib/vecmath.jar" />
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- Package standalone jar -->
+    <!-- <target name="bin" depends="jar" description="Build a standalone jar">
+        <mkdir dir="${build.bin}" />
+
+        <jar destfile="${build.bin}/${ant.project.name}.jar" duplicate="preserve">
+            <zipgroupfileset file="${build.lib}/${ant.project.name}.jar" />
+            <zipgroupfileset dir="${lib.dir}">
+                <include name="AppFramework.jar" />
+                <include name="commons-cli.jar" />
+                <include name="commons-logging.jar" />
+                <include name="commons-io.jar" />
+                <include name="jcommon.jar" />
+                <include name="jfreechart.jar" />
+                <include name="jl.jar" />
+                <include name="jtransforms.jar" />
+                <include name="meparser.jar" />
+                <include name="mp3spi.jar" />
+                <include name="rbnb.jar" />
+                <include name="swing-worker.jar" />
+                <include name="tritonus_share.jar" />
+                <include name="httpmime.jar" />
+                <include name="httpcore.jar" />
+                <include name="httpcore-nio.jar" />
+                <include name="httpclient.jar" />
+                <include name="idw-gpl.jar" />
+                <include name="commons-codec.jar" />
+                <include name="apache-mime4j.jar" />
+                <include name="commons-net.jar" />
+            </zipgroupfileset>
+            <manifest>
+                <attribute name="Main-Class" value="${main.class}" />
+                <attribute name="Class-Path" value="vecmath.jar j3dcore.jar j3dutil.jar" />
+            </manifest>
+        </jar>
+    </target> -->
+
+    <!-- Sign jar file for distribution -->
+    <target name="signjar" depends="jar" description="Sign the standalone jar file">
+        <echo message="Make sure to pass in the keystore password and key password as follows: -Dkey.password=[key pw] -Dkeystore.password=[keystore pw]"/>
+        <signjar alias="${key.alias}" keystore="${keystore.dir}" keypass="${key.password}" storepass="${keystore.password}" preservelastmodified="true">
+            <path>
+                <fileset dir="${build.bin}" includes="**/*.jar" />
+            </path>
+        </signjar>
+    </target>
+
+    <!-- <target name="dist-win" depends="jar" description="Build the binary distribution">
+        <mkdir dir="${build.dist}" />
+
+        <zip destfile="${build.dist}/${ant.project.name}-win-${version}.zip">
+            <fileset dir=".">
+                <include name="LICENSE.txt" />
+                <include name="NOTICE.txt" />
+                <include name="README.txt" />
+                <include name="RELEASE-NOTES.txt" />
+            </fileset>
+            <fileset file="${build.bin}/${ant.project.name}.exe" />
+        </zip>
+    </target> -->
+
+    <target name="dist-bin" description="Build the binary distribution">
+        <mkdir dir="${build.dist}" />
+
+        <zip destfile="${build.dist}/${ant.project.name}-${version}.zip">
+            <zipfileset dir="." prefix="${ant.project.name}-${version}">
+                <include name="LICENSE.txt" />
+                <include name="NOTICE.txt" />
+                <include name="README.txt" />
+                <include name="RELEASE-NOTES.txt" />
+                <include name="doc/*" />
+            </zipfileset>
+            <zipfileset dir="." prefix="${ant.project.name}-${version}" filemode="555">
+            	<include name="rdv.sh"/>
+       		<include name="rdv.bat"/>
+            </zipfileset>
+
+            <zipfileset dir="${build.lib}" prefix="${ant.project.name}-${version}/lib">
+                <include name="*.jar"/>
+                <include name="*.txt"/>
+            </zipfileset>
+        	<!--
+            <zipfileset dir="${jnlp.dir}" prefix="${ant.project.name}-${version}">
+                <include name="*.jnlp"/>
+            </zipfileset>
+            -->
+            <zipfileset file="${build.bin}/${ant.project.name}.jar" prefix="${ant.project.name}-${version}"/>
+        </zip>
+    </target>
+
+    <target name="dist-src" description="Build the source distribution">
+        <mkdir dir="${build.dist}" />
+
+        <delete dir="debian/rdv" />
+        <delete>
+            <fileset dir="debian">
+                <include name="files" />
+                <include name="*.debhelper" />
+                <include name="stamp-ant-build" />
+            </fileset>
+        </delete>
+
+        <zip destfile="${build.dist}/${ant.project.name}-${version}-src.zip">
+            <zipfileset file="debian/rules" filemode="755" prefix="${ant.project.name}-${version}/debian" />
+            <zipfileset dir="." includes="build-dist.xml" fullpath="${ant.project.name}-${version}/build.xml" />
+            <zipfileset dir="." prefix="${ant.project.name}-${version}">
+                <exclude name="build/**" />
+                <include name="**" />
+                <exclude name="**/*.swp" />
+                <exclude name="**/*.bak" />
+                <exclude name="**/*.log" />
+                <exclude name="build.xml" />
+                <exclude name="build-dist.xml" />
+                <exclude name="bin/**" />
+                <exclude name="middleware/**" />
+                <exclude name="rappture/**" />
+                <exclude name="${build.dir}/**" />
+                <exclude name="debian/rules" />
+            </zipfileset>
+        </zip>
+    </target>
+
+    <target name="dist" depends="clean,jar,dist-bin,dist-src" description="Build the binary and source distributions" />
+
+    <target name="dist-signed" depends="clean, signjar, dist" description="Build the binary and source distributions" />
+
+    <target name="exe" depends="checkLaunch4j,jar" description="Build windows executable">
+        <mkdir dir="${build.exe}" />
+
+        <property name="launch4j.home" value="${env.LAUNCH4J_HOME}" />
+        <taskdef name="launch4j" classname="net.sf.launch4j.ant.Launch4jTask" classpath="${launch4j.home}/launch4j.jar:${launch4j.home}/lib/xstream.jar" />
+
+        <launch4j configFile="launch4j/RDV-launch4j.xml" jar="${build.bin}/${ant.project.name}.jar" outfile="${build.exe}/${ant.project.name}.exe" fileVersion="${Application.versionNumber}.0" txtFileVersion="${version}" productVersion="${Application.versionNumber}.0" txtProductVersion="${version}" />
+    </target>
+
+    <target name="installer" depends="exe" description="Build windows installer">
+        <exec executable="makensis">
+            <arg value="/Dversion=${version}" />
+            <arg value="/V3" />
+            <arg value="nsis/rdv.nsi" />
+        </exec>
+    </target>
+
+    <target name="deb" description="Build debian package">
+        <exec executable="dpkg-buildpackage">
+            <arg value="-rfakeroot" />
+        </exec>
+    </target>
+
+    <target name="mac" depends="jar" description="Build a mac application bundle">
+        <property name="apple.appstub" location="/System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub" />
+
+        <property name="application.dmg" location="${build.mac}/${application.name}-${version}.dmg" />
+        <property name="application.dir" location="${build.mac}/${application.name}.app" />
+        <property name="application.contents" location="${application.dir}/Contents" />
+        <property name="application.macos" location="${application.contents}/MacOS" />
+        <property name="application.macos.stub" location="${application.macos}/${ant.project.name}" />
+        <property name="application.resources" location="${application.contents}/Resources" />
+        <property name="application.resources.java" location="${application.resources}/Java" />
+
+        <mkdir dir="${application.macos}" />
+        <mkdir dir="${application.resources.java}" />
+
+        <!-- copy jars -->
+        <copy file="${build.bin}/${application.id}.jar" toDir="${application.resources.java}" />
+
+        <!-- copy application stub -->
+        <copy file="${apple.appstub}" toFile="${application.macos}/${application.id}" />
+        <!-- fix stub permissions -->
+        <exec executable="/bin/chmod">
+            <arg line="755 '${application.macos.stub}'" />
+        </exec>
+
+        <!-- copy and configure Info.plist -->
+        <copy file="mac/Info.plist" toDir="${application.contents}">
+            <filterset>
+                <filter token="APPLICATIONNAME" value="${application.name}" />
+                <filter token="APPLICATIONID" value="${application.id}" />
+                <filter token="VERSION" value="${version}" />
+                <filter token="MAINCLASS" value="${main.class}" />
+            </filterset>
+        </copy>
+
+        <copy file="mac/PkgInfo" toDir="${application.contents}" />
+        <copy file="mac/rdv.icns" toFile="${application.resources}/${application.id}.icns" />
+
+        <!-- create disk image -->
+        <exec executable="/usr/bin/hdiutil">
+            <arg line="create -srcfolder ${build.mac} -volname ${application.name} -ov ${application.dmg}" />
+        </exec>
+        <exec executable="/usr/bin/hdiutil">
+            <arg line="internet-enable -yes ${application.dmg}"/>
+        </exec>
+    </target>
+
+    <target name="api" description="Build documentation">
+        <mkdir dir="${build.api}"/>
+        <javadoc packagenames="org.rdv.*" sourcepath="${src.dir}" defaultexcludes="yes" destdir="${build.api}" author="true" version="true" use="true" windowtitle="RDV Class Library Documentation">
+            <link href="http://java.sun.com/j2se/1.5.0/docs/api/"/>
+        </javadoc>
+    </target>
+
+    <!-- Run unit tests -->
+    <target name="test" depends="compile" description="Run unit tests">
+        <mkdir dir="${build.tests}"/>
+
+        <javac srcdir="${tests.dir}" 
+			destdir="${build.tests}"
+			classpath="${build.classes}"
+			classpathref="classpath"
+			source="1.5"
+			target="1.5"
+			debug="${debug}">
+        </javac>
+
+        <junit printsummary="true" haltonfailure="true">
+            <classpath>
+                <path refid="classpath"/>
+                <pathelement location="${build.classes}"/>
+                <pathelement location="${build.tests}"/>
+            </classpath>
+            <formatter type="plain"/>
+            <batchtest fork="true">
+                <fileset dir="${build.tests}" includes="**/*Test.class"/>
+            </batchtest>
+        </junit>
+    </target>
+
+    <!-- Run the RDV -->
+    <target name="run" depends="compile" description="Run application">
+        <java classpathref="runtimeclasspath" classname="${main.class}" fork="true">
+            <jvmarg value="-Xms64M"/>
+            <jvmarg value="-Xmx1024M"/>
+            <jvmarg value="-Dsun.java2d.ddscale=true"/>
+        </java>
+    </target>
+
+    <target name="help" depends="compile" description="Show usage">
+        <java classpathref="runtimeclasspath" classname="${main.class}" fork="true">
+            <arg line="--help"/>
+        </java>
+    </target>
+
+</project>

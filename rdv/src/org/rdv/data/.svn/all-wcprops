@@ -1,0 +1,161 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/data
+END
+XYSeriesFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/data/XYSeriesFormatter.java
+END
+DataExporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/70/trunk/src/org/rdv/data/DataExporter.java
+END
+LocalChannelException.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/data/LocalChannelException.java
+END
+XYChannelSeries.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/84/trunk/src/org/rdv/data/XYChannelSeries.java
+END
+Channel.java
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/data/Channel.java
+END
+DataSample.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/data/DataSample.java
+END
+VisualizationSeries.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/data/VisualizationSeries.java
+END
+JPEGConverter.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/data/JPEGConverter.java
+END
+SeriesFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/tools/rdv/svn/!svn/ver/55/trunk/src/org/rdv/data/SeriesFormatter.java
+END
+MATFileWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/70/trunk/src/org/rdv/data/MATFileWriter.java
+END
+LocalChannelManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/data/LocalChannelManager.java
+END
+VizSeriesList.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/data/VizSeriesList.java
+END
+ASCIIDataFileWriter.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/70/trunk/src/org/rdv/data/ASCIIDataFileWriter.java
+END
+BasicSeriesFormatter.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/data/BasicSeriesFormatter.java
+END
+JPEGFileDataSample.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/data/JPEGFileDataSample.java
+END
+ChannelSeries.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/80/trunk/src/org/rdv/data/ChannelSeries.java
+END
+LocalChannel.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/data/LocalChannel.java
+END
+JPEGFileCollectionReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/data/JPEGFileCollectionReader.java
+END
+ChartLocalSeries.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/data/ChartLocalSeries.java
+END
+JPEGZipFileReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/data/JPEGZipFileReader.java
+END
+JPEGZipDataExporter.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/data/JPEGZipDataExporter.java
+END
+DataFileReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/67/trunk/src/org/rdv/data/DataFileReader.java
+END
+JPEGDirectoryReader.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/data/JPEGDirectoryReader.java
+END
+XYZChannelSeries.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/tools/rdv/svn/!svn/ver/84/trunk/src/org/rdv/data/XYZChannelSeries.java
+END
+TabularChannelSeries.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/84/trunk/src/org/rdv/data/TabularChannelSeries.java
+END
+NumericDataSample.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/data/NumericDataSample.java
+END

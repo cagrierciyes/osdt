@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/tools/rdv/svn/!svn/ver/105/trunk
+END
+NOTICE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/tools/rdv/svn/!svn/ver/38/trunk/NOTICE.txt
+END
+build-dist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/tools/rdv/svn/!svn/ver/85/trunk/build-dist.xml
+END
+LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/tools/rdv/svn/!svn/ver/43/trunk/LICENSE.txt
+END
+.classpath
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/tools/rdv/svn/!svn/ver/103/trunk/.classpath
+END
+rdv.bat
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/tools/rdv/svn/!svn/ver/96/trunk/rdv.bat
+END
+rdv.sh
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/tools/rdv/svn/!svn/ver/96/trunk/rdv.sh
+END
+RELEASE-NOTES.txt
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/tools/rdv/svn/!svn/ver/104/trunk/RELEASE-NOTES.txt
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/tools/rdv/svn/!svn/ver/34/trunk/.project
+END
+RDV.launch
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/tools/rdv/svn/!svn/ver/34/trunk/RDV.launch
+END
+commons-logging.properties
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/tools/rdv/svn/!svn/ver/34/trunk/commons-logging.properties
+END
+build.properties
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/tools/rdv/svn/!svn/ver/97/trunk/build.properties
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/tools/rdv/svn/!svn/ver/34/trunk/log4j.properties
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/tools/rdv/svn/!svn/ver/99/trunk/README.txt
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/tools/rdv/svn/!svn/ver/99/trunk/build.xml
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/tools/rdv/svn/!svn/ver/74/trunk/tests/org/rdv/rbnb
+END
+LocalServerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/74/trunk/tests/org/rdv/rbnb/LocalServerTest.java
+END
+DataTurbineTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/74/trunk/tests/org/rdv/rbnb/DataTurbineTest.java
+END
+ChannelManagerTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/74/trunk/tests/org/rdv/rbnb/ChannelManagerTest.java
+END
+RBNBChannelTest.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/tools/rdv/svn/!svn/ver/74/trunk/tests/org/rdv/rbnb/RBNBChannelTest.java
+END

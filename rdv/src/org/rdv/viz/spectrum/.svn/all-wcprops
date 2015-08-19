@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/viz/spectrum
+END
+SelectorFunction.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/viz/spectrum/SelectorFunction.java
+END
+SpectrumAnalyzerPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/tools/rdv/svn/!svn/ver/48/trunk/src/org/rdv/viz/spectrum/SpectrumAnalyzerPanel.java
+END
+SpectrumViz.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/viz/spectrum/SpectrumViz.java
+END
+WindowFunction.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/viz/spectrum/WindowFunction.java
+END
+SpectrumXYSeries.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/viz/spectrum/SpectrumXYSeries.java
+END

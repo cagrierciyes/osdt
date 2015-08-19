@@ -1,0 +1,119 @@
+# This is an example file for the 3D Model Panel model definition file
+#  to be used with the 3D Model Panel in RDV
+# It should explain the layout and options available in the model definition
+#  syntax.
+#
+# Comments are lines preceded by the # symbol and are ignored by the parser
+#  It is recommended to make use of them to make notes about the model file
+#  as the current format is rather verbose.
+#  blanks lines are also ignored by the compiler, so feel free to seperate 
+#  sections for clarity
+
+
+# The model file definition currently consists of four sections:
+# Nodes, Members, ScaleNodes (for Stress, Strain, Load) and Options
+
+
+# The Node section defines the name, position and color of a node in the
+# structure, as well as any channel connections.
+# Only the name and position are required, all other sections are optional,
+# however they must appear in the correct order:
+# Examples (in the order they must appear on a line):
+#	Name: 			alphanumeric and underscore allowed
+#	Position:		( 1.03,  3 ,  -5.88)
+#	Displacement Channels:	[ x channel, y channel, z channel ]
+#	Rotation Channels:	{ x channel, y channel, z channel }
+#	Color:			Colorname or Hex color as '#FFFFFF'
+#
+# If a channel group is used, all three channels must be listed,
+# use '--' mark an axis as having no connection. 
+#	IE for only X axis displacement:
+#		[ x_channel_name, -- , -- ]
+# Colors supported are:
+#	red,orange,yellow,green,blue,cyan,pink,magenta,white,gray,black
+# or hexadecimal colors in #XXXXXX format.
+# See http://www.drewfoster.com/rgbhex/rgbhex.php for a quick
+# explanation of hex color if you need/want.
+#	Also, note that the interface uses orange to highlight selected nodes,
+#	so it may be prudent to avoid orange for other things.
+# Finally, an example:
+
+# Node Section:
+#ground floor
+node_gnd_1	(  2,  2, 0)
+node_gnd_2	( -2,  2, 0)	blue
+node_gnd_3	( -2, -2, 0)	#0000FF
+node_gnd_4	(  2, -2, 0)	green
+
+#first floor
+node_1st_1	(  2,  2, 3)	[Example/X_disp, Example/Y_disp, Example/Z_disp]  magenta
+node_1st_2	( -2,  2, 3)	[Example/X_disp, Example/Y_disp, Example/Z_disp]  magenta
+node_1st_3	( -2, -2, 3)	[Example/X_disp, Example/Y_disp, Example/Z_disp]  magenta
+node_1st_4	(  2, -2, 3)	[Example/X_disp, Example/Y_disp, Example/Z_disp] {Example/X_rot,--,--} cyan
+
+# Each section must be ended by a line containing only ===
+# which delimits the sections for the program. 
+#	Don't Forget Them!
+#End the nodes section
+===
+
+
+# The next section defines members, connections between nodes.
+# The format here is:
+# 	Name of first node:	alphanumeric and underscore
+#	Name of second node:	(the nodes need to exist in the Nodes section)
+#	Type of member:		[cubic] or nothing (defaults to linear)
+#	Color:			Same as for Nodes
+
+# The type defines how the member will be drawn. A cubic member will use
+# Bezier curves to approximate how a member would deform under the
+# connected nodes' motion. If no type is specified, linear is assumed,
+# a straight line is drawn between the nodes at all times.
+
+# Member Section:
+# connect the stories, some cubic:
+node_gnd_1 node_1st_1 green
+node_gnd_2 node_1st_2 green
+node_gnd_3 node_1st_3 [cubic] yellow
+node_gnd_4 node_1st_4 [cubic] yellow
+
+# connect the floor
+node_1st_1 node_1st_2 blue
+node_1st_2 node_1st_3 #0000FF
+node_1st_3 node_1st_4 blue
+node_1st_4 node_1st_1 blue
+
+#End the members section
+===
+
+# The next section defines stress/strain/load nodes. These node change color based
+# on the channel data and determined limit values. They have many options on 
+# the line, as follows:
+#	Name: 		Same as with Nodes
+#	Position: 	Same as with Nodes
+#	Value Limits:	< lower limit, middle value, upper limit >
+#	Limit Color:	< lower color, middle color, upper color, fail color >
+#	Stress/Strain Channel:	{ Channel Name }
+#	Displacement Channels:	Same as Nodes
+# These nodes will change their color gradually between the middle and upper
+# or lower limit colors based on the value of the data in the Stress/Strain
+# channel. If the value goes beyond either limit, they will display the 
+# 'fail color'. The upper and lower limits need not be symmetric around the 
+# middle value.
+
+node_str ( 0.1, -2, 2 )	< -2.9, 0, 2.8 > <green, white, yellow, red> { Example/strain } [Example/X_disp, Example/Y_disp, Example/Z_disp]
+
+#End the strain/load section
+===
+
+# The final section defines other options, of which only 'center' is currently
+# supported. This line will change the center of the model to the new value,
+# and overrides the center computed by calculating the average of the model's
+# extreme nodes.
+# Note that the the current viewing tools do not account for dramatic changes
+# made here, so shifting the center of the model dramatically from its computed
+# center may necessitate some zooming and panning in the view window.
+# The line takes the form:
+#
+#center (0,1,1)
+#

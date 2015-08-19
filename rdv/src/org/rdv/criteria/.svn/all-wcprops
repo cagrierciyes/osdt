@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/criteria
+END
+AdditionCriteriaFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/criteria/AdditionCriteriaFactory.java
+END
+AllowAll.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/criteria/AllowAll.java
+END
+RejectDuplicates.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/criteria/RejectDuplicates.java
+END
+AdditionCriteria.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/criteria/AdditionCriteria.java
+END

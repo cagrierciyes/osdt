@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/config
+END
+ConfigStore.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/config/ConfigStore.java
+END
+ConfigFile.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/config/ConfigFile.java
+END
+ConfigRBNB.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/config/ConfigRBNB.java
+END

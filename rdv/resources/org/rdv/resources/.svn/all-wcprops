@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/tools/rdv/svn/!svn/ver/83/trunk/resources/org/rdv/resources
+END
+pause.gif
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/9/trunk/resources/org/rdv/resources/pause.gif
+END
+RDV.properties
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/83/trunk/resources/org/rdv/resources/RDV.properties
+END
+begin.gif
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/tools/rdv/svn/!svn/ver/9/trunk/resources/org/rdv/resources/begin.gif
+END
+play.gif
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/9/trunk/resources/org/rdv/resources/play.gif
+END
+rt.gif
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tools/rdv/svn/!svn/ver/9/trunk/resources/org/rdv/resources/rt.gif
+END
+end.gif
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/9/trunk/resources/org/rdv/resources/end.gif
+END
+rdv.png
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/9/trunk/resources/org/rdv/resources/rdv.png
+END

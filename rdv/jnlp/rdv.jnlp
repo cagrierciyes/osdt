@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+"
+  codebase="http://nees.umn.edu/nees-rdv"
+  href="rdv.jnlp">
+    <information>
+        <title>RDV</title>
+        <vendor>University of Minnesota, Purdue University, Palta Software, University at Buffalo</vendor>
+        <homepage href="http://nees.org/resources/66"/>
+        <description>A visualization environment for scientific and engineering data.</description>
+        <icon href="rdv.png"/>
+        <offline-allowed/>
+    </information>
+    <security>
+        <all-permissions/>
+    </security>
+    <resources>
+        <j2se version="1.5+" initial-heap-size="128m" max-heap-size="512m"/>
+        <jar href="rdv.jar" main="true"/>
+        <jar href="lib/AppFramework.jar" />
+        <jar href="lib/commons-cli.jar" />
+        <jar href="lib/commons-logging.jar" />
+        <jar href="lib/commons-io.jar" />
+        <jar href="lib/jcommon.jar" />
+        <jar href="lib/jfreechart.jar" />
+        <jar href="lib/jtransforms.jar" />
+        <jar href="lib/meparser.jar" />
+        <jar href="lib/rbnb.jar" />
+        <jar href="lib/swing-worker.jar" />
+        <jar href="lib/tritonus_share.jar" />
+        <jar href="lib/httpmime.jar" />
+        <jar href="lib/httpcore.jar" />
+        <jar href="lib/httpcore-nio.jar" />
+        <jar href="lib/httpclient.jar" />
+        <jar href="lib/idw-gpl.jar" />
+        <jar href="lib/commons-codec.jar" />
+        <jar href="lib/apache-mime4j.jar" />
+        <jar href="lib/commons-net.jar" />
+    </resources>
+    <application-desc>
+        <property name="org.apache.commons.logging.Log" value="org.apache.commons.logging.impl.NoOpLog"/>
+    </application-desc>
+</jnlp>

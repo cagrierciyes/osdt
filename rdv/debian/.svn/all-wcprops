@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/tools/rdv/svn/!svn/ver/34/trunk/debian
+END
+control
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/tools/rdv/svn/!svn/ver/9/trunk/debian/control
+END
+compat
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/tools/rdv/svn/!svn/ver/9/trunk/debian/compat
+END
+rdv.desktop
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/tools/rdv/svn/!svn/ver/9/trunk/debian/rdv.desktop
+END
+rdv.sh
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/tools/rdv/svn/!svn/ver/9/trunk/debian/rdv.sh
+END
+changelog
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/tools/rdv/svn/!svn/ver/9/trunk/debian/changelog
+END
+copyright
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/tools/rdv/svn/!svn/ver/9/trunk/debian/copyright
+END
+rdv.xml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/tools/rdv/svn/!svn/ver/9/trunk/debian/rdv.xml
+END
+rules
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/tools/rdv/svn/!svn/ver/9/trunk/debian/rules
+END
+ant.properties
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/tools/rdv/svn/!svn/ver/9/trunk/debian/ant.properties
+END

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+/usr/bin/invoke_app "$@" -t rdv \
+    -w captive \
+    -e "J3D_HOME=@tool/lib" \
+    -C "java -Xmx768m -verbose -cp \"@tool/bin/rdv.jar:@tool/lib/*\" org.rdv.RDV"

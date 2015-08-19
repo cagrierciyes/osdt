@@ -1,0 +1,54 @@
+# Add Local Channel Dialog
+
+addLocalChannelDialog.title = Add a local channel
+
+headerLabel.text = <html><body> \
+                   Add a local channel calculated from other channels. Enter a \
+                   channel name that is not already <br>taken and optionally \
+                   give it a unit. Create variables for each channel you want \
+                   to reference <br> in this channel and define its formula. \
+                   The formula can contain these variables, along with <br> \
+                   other standard math operators, functions and constants. \
+                   </body></html>
+
+nameLabel.text = Name:
+unitLabel.text = Unit:
+variablesLabel.text = Variables:
+
+addVariableButton.text = Add
+removeVariableButton.text = Remove
+formulaLabel.text = Formula:
+help.button.text = Help
+
+# Channel messages
+addChannelButton.text = Add Channel
+saveChannelButton.text = Save Channel
+cancelButton.text = Cancel
+invalidDataError = Invalid Data Error
+addChannelInvalidData.text = Unable to add channel.  Fix the following errors to proceed: 
+saveChannelInvalidData.text = Unable to update channel.  Fix the following errors to proceed: 
+invalidUnitsError = <li>Units are not valid.  They cannot contain "=" and cannot be blank.</li>
+invalidVariableError = <li>Invalid variable name found: %s.  A variable name must start with a letter followed by any number of letters or numbers.</li>
+duplicateVariableNameError = <li>Duplicate variable name detected.  Rename one instance of the following variable before proceeding: %s</li>
+formulaInvalid = <li>The formula you provided is invalid.  Please verify that the formula is not blank and that you have used all the variables in the formula.</li>
+invalidChannelName = <li>Invalid channel name: %s.  A valid channel name must start with a letter, number, or the following characters: ".()-".  Forward slashes are valid after the first character.</li>
+channelNameNotAvailable = <li>Channel name "%s" is not available.</li>
+variableNotSpecified = <li>A variable was not specified.  Each new channel requires at least one variable.</li>
+channel.add.documentation = http://nees.org/resources/1002/download/rdv2.0users_guide.pdf#page=5
+
+# Generic messages
+browser.error = Error: Unable to open default browser.  Java's "Desktop" API is not available on your machine.
+browser.communication.error = Error: IOException occurred while launching browser.
+system.configuration.error = System Configuration Error
+
+formulaErrorTitle = Formula Error
+formulaErrorMessage = Formula Error
+arithmeticErrorMessage = Unknown function or variable: %s
+syntaxErrorMessage = There is a syntax error in line %d column %d 
+
+generic.programming.error = There is a programming bug you just exposed.  Please email the developers the list of actions you took to produce this error and a screenshot.
+
+variablesTableChannelColumnText = Channel
+variablesTableNameColumnText = Name
+
+addChannelMenuItem.text = Add channel

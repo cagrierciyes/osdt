@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/viz/dial
+END
+BoundedDialScale.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/viz/dial/BoundedDialScale.java
+END
+DialViz.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/viz/dial/DialViz.java
+END
+DialPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/viz/dial/DialPanel.java
+END
+DialModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/tools/rdv/svn/!svn/ver/9/trunk/src/org/rdv/viz/dial/DialModel.java
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/net
+END
+FTPAuthentication.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/tools/rdv/svn/!svn/ver/85/trunk/src/org/rdv/net/FTPAuthentication.java
+END
+NetworkAuthentication.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/tools/rdv/svn/!svn/ver/34/trunk/src/org/rdv/net/NetworkAuthentication.java
+END
