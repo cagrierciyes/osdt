@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+type: S8, S16, S32, U8, U16, U32, DOUBLE(8 byte), FLOAT(4 byte), STRING, TIME(6 byte)
+future features: mask & hex-dec & binary & unit
+<mask>0x3F</mask>
+<info>""</info>
+-->
+<channel>
+	<name>SC</name>
+	<configs>
+		<config>
+			<name>CPU1</name>
+			<cmdmid>0x1817</cmdmid>
+			<tlmmid>0x0700</tlmmid>
+			<tlmmidx>0x08AA</tlmmidx>
+			<endian>LE</endian>
+		</config>
+	</configs>
+	<commandoffset>+0</commandoffset>
+	<commands>
+		<command>
+			<name>CFS_SC_NOP_CC</name>
+		</command>
+		<command>
+			<name>CFS_SC_RESET_STATUS_CC</name>
+		</command>
+	</commands>
+	<telemetry>
+		<parameter>
+			<name>App Id</name>
+			<type>U16</type>
+			<endian>BE</endian>
+		</parameter>
+		<parameter>
+			<name>Sequence Count</name>
+			<type>U16</type>
+			<mask>0x3FFF</mask>
+			<endian>BE</endian>
+		</parameter>
+		<parameter>
+			<name>Length</name>
+			<type>U16</type>
+			<endian>BE</endian>
+		</parameter>
+		<parameter>
+			<name>Time</name>
+			<type>TIME</type>
+		</parameter>
+		<parameter>
+			<name>Ats Number</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Atp State</name>
+			<type>U8</type>
+		</parameter>  	
+		<parameter>
+			<name>Cont Ats Fail Flag</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Command Error Ctr</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Command Ctr</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Switch Pend Flag</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Num Rts Active</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Rts Active Ctr</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Rts Active Err Ctr</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Ats Cmd Ctr</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Ats Cmd Err Ctr</name>
+			<type>U16</type>
+		</parameter> 		
+		<parameter>
+			<name>Rts Cmd Ctr</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Rts Cmd Err Ctr</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Last Ats Err Seq</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Last Ats Err Cmd</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Last Rts Err Seq</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Append Cmd Arg</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Append Entry Count</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Append Byte Count</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Append Load Count</name>
+			<type>U16</type>
+		</parameter>		
+		<parameter>
+			<name>Atp Cmd Number</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Atp Free Bytes 0</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Atp Free Bytes 1</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Next Rts Time</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Next Ats Time</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Rts Exec Status 0</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Rts Exec Status 1</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Rts Exec Status 2</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Rts Exec Status 3</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Rts Disabled Status 0</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Rts Disabled Status 1</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Rts Disabled Status 2</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Rts Disabled Status 3</name>
+			<type>U16</type>
+		</parameter>
+	</telemetry>
+</channel>

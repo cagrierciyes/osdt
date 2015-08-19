@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+type: S8, S16, S32, U8, U16, U32, DOUBLE(8 byte), FLOAT(4 byte), STRING, TIME(6 byte)
+future features: mask & hex-dec & binary & unit
+<mask>0x3F</mask>
+<info>""</info>
+-->
+
+<channel>
+	<name>ES</name>
+	<configs>
+		<config>
+			<name>CPU1</name>
+			<cmdmid>0x1817</cmdmid>
+			<tlmmid>0x0700</tlmmid>
+			<tlmmidx>0x0800</tlmmidx>
+		</config>
+	</configs>
+	<commandoffset>+0</commandoffset>
+	<commands>
+		<command>
+			<name>CFE_ES_NOP_CC</name>
+		</command>
+		<command>
+			<name>CFE_ES_RESET_STATUS_CC</name>
+		</command>
+	</commands>
+	<telemetry>
+		<parameter>
+			<name>App Id</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Sequence Count</name>
+			<type>U16</type>
+			<mask>0x3FFF</mask>
+		</parameter>
+		<parameter>
+			<name>Length</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Time</name>
+			<type>TIME</type>
+		</parameter>
+		<parameter>
+			<name>Command Counter</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Error Counter</name>
+			<type>U8</type>
+		</parameter> 
+		<parameter>
+			<name>cFE Core Checksum</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>cFE Major Version</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>cFE Minor Version</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>cFE Revision</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>OSAL Major Version</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>OSAL Minor Version</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>OSAL Revision</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>OSAL Mission Rev</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Syslog Bytes Used</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Syslog Size</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Syslog Entries</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Syslog Mode</name>
+			<type>32</type>
+		</parameter>
+		<parameter>
+			<name>ERlog Index</name>
+			<type>U32</type>
+		</parameter>
+				<parameter>
+			<name>ERlog Entries</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Registered Core Apps</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Registered CFS Apps</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Registered Tasks</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Registered Libs</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Reset Type</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Reset Subtype</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Processor Resets</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Max Proc Resets</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Boot Source</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Perf Mon State</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Perf Mon Mode</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Perf Trigger Count</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Heap Bytes Free</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Heap Blocks Free</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Heap Max Blk Size</name>
+			<type>U32</type>
+		</parameter>
+	</telemetry>
+</channel>

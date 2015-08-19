@@ -92,7 +92,7 @@ public class source {
 		{
 			if(xmlparser.get_applicationids().get(i) == app_id){
 				available = true;
-				System.out.println(" XML FILE OK / APID: " + app_id);
+				System.out.println(" XML OK / APID: " + app_id);
 				break;
 			}		
 		}

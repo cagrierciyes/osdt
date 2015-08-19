@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+type: S8, S16, S32, U8, U16, U32, DOUBLE(8 byte), FLOAT(4 byte), STRING, TIME(6 byte)
+future features: mask & hex-dec & binary & unit
+<mask>0x3F</mask>
+<info>""</info>
+-->
+<channel>
+	<name>MD-TBL0</name>
+	<configs>
+		<config>
+			<name>CPU1</name>
+			<cmdmid>0x1817</cmdmid>
+			<tlmmid>0x0700</tlmmid>
+			<tlmmidx>0x0891</tlmmidx>
+			<endian>LE</endian>
+		</config>
+	</configs>
+	<commandoffset>+0</commandoffset>
+	<commands>
+		<command>
+			<name>CFS_MD-TBL0_NOP_CC</name>
+		</command>
+		<command>
+			<name>CFS_MD-TBL0_RESET_STATUS_CC</name>
+		</command>
+	</commands>
+	<telemetry>
+		<parameter>
+			<name>App Id</name>
+			<type>U16</type>
+			<endian>BE</endian>
+		</parameter>
+		<parameter>
+			<name>Sequence Count</name>
+			<type>U16</type>
+			<mask>0x3FFF</mask>
+			<endian>BE</endian>
+		</parameter>
+		<parameter>
+			<name>Length</name>
+			<type>U16</type>
+			<endian>BE</endian>
+		</parameter>
+		<parameter>
+			<name>Time</name>
+			<type>TIME</type>
+		</parameter>
+		<parameter>
+			<name>Table Id</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Address Count</name>
+			<type>U8</type>
+		</parameter>   
+		<parameter>
+			<name>Byte Count</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Rate</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>Signature</name>
+			<type>STRING</type>
+			<size>32</size>
+		</parameter>
+		<parameter>
+			<name>Data 0</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 1</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 2</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 3</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 4</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 5</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 6</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 7</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 8</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 9</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 10</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 11</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 12</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 13</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 14</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 15</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 16</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 17</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 18</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 19</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 20</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 21</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 22</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 23</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 24</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 25</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 26</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 27</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 28</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 29</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 30</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 31</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 32</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 33</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 34</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 35</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 36</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 37</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 38</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 39</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 40</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 41</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 42</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 43</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 44</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 45</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 46</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 47</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 48</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 49</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 50</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 51</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 52</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 53</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 54</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 55</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 56</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 57</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 58</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 59</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 60</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 61</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 62</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 63</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 64</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 65</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 66</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 67</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 68</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 69</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 70</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 71</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 72</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 73</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 74</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 75</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 76</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 77</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 78</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 79</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 80</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 81</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 82</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 83</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 84</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 85</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 86</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 87</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 88</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 89</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 90</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 91</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 92</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 93</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 94</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 95</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 96</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 97</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 98</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Data 99</name>
+			<type>U8</type>
+		</parameter>	
+	</telemetry>
+</channel>

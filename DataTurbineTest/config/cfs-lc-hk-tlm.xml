@@ -6,23 +6,23 @@ future features: mask & hex-dec & binary & unit
 <info>""</info>
 -->
 <channel>
-	<name>EVS</name>
+	<name>LC</name>
 	<configs>
 		<config>
 			<name>CPU1</name>
 			<cmdmid>0x1817</cmdmid>
 			<tlmmid>0x0700</tlmmid>
-			<tlmmidx>0x0801</tlmmidx>
+			<tlmmidx>0x08A7</tlmmidx>
 			<endian>LE</endian>
 		</config>
 	</configs>
 	<commandoffset>+0</commandoffset>
 	<commands>
 		<command>
-			<name>CFE_EVS_NOP_CC</name>
+			<name>CFS_LC_NOP_CC</name>
 		</command>
 		<command>
-			<name>CFE_EVS_RESET_STATUS_CC</name>
+			<name>CFS_LC_RESET_STATUS_CC</name>
 		</command>
 	</commands>
 	<telemetry>
@@ -53,554 +53,562 @@ future features: mask & hex-dec & binary & unit
 		<parameter>
 			<name>Error Counter</name>
 			<type>U8</type>
-		</parameter>
+		</parameter>	
 		<parameter>
-			<name>Message Format Mode</name>
+			<name>Current State</name>
 			<type>U8</type>
 		</parameter>
 		<parameter>
-			<name>Message Trunc Counter</name>
+			<name>WP 0-1-2-3 Res</name>
 			<type>U8</type>
 		</parameter>
 		<parameter>
-			<name>Unregister App Counter</name>
+			<name>WP 4-5-6-7 Res</name>
 			<type>U8</type>
 		</parameter>
 		<parameter>
-			<name>Output Port</name>
+			<name>WP 8-9-10-11 Res</name>
 			<type>U8</type>
 		</parameter>
 		<parameter>
-			<name>Log Full Flag</name>
+			<name>WP 12-13-14-15 Res</name>
 			<type>U8</type>
 		</parameter>
 		<parameter>
-			<name>Log Mode</name>
+			<name>WP 16-17-18-19 Res</name>
 			<type>U8</type>
 		</parameter>
 		<parameter>
-			<name>Message Send Counter</name>
+			<name>WP 20-21-22-23 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 24-25-26-27 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 28-29-30-31 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 32-33-34-35 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 36-37-38-39 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 40-41-42-43 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 44-45-46-47 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 48-49-50-51 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 52-53-54-55 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 56-57-58-59 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 60-61-62-63 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 64-65-66-67 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 68-69-70-71 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 72-73-74-75 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 76-77-78-79 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 80-81-82-83 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 84-85-86-87 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 88-89-90-91 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 92-93-94-95 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 96-97-98-99 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 100-101-102-103 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 104-105-106-107 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 108-109-110-111 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 112-113-114-115 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 116-117-118-119 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 120-121-122-123 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 124-125-126-127 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 128-129-130-131 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 132-133-134-135 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 136-137-138-139 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 140-141-142-143 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 144-145-146-147 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 148-149-150-151 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 152-153-154-155 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 156-157-158-159 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 160-161-162-163 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 164-165-166-167 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 168-169-170-171 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>WP 172-173-174-175 Res</name>
+			<type>U8</type>
+		</parameter>       
+		<parameter>
+			<name>AP 0-1 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 2-3 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 4-5 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 6-7 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 8-9 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 10-11 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 12-13 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 14-15 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 16-17 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 18-19 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 20-21 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 22-23 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 24-25 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 26-27 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 28-29 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 30-31 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 32-33 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 34-35 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 36-37 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 38-39 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 40-41 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 42-43 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 44-45 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 46-47 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 48-49 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 50-51 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 52-53 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 54-55 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 56-57 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 58-59 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 60-61 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 62-63 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 64-65 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 66-67 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 68-69 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 70-71 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 72-73 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 74-75 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 76-77 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 78-79 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 80-81 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 82-83 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 84-85 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 86-87 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 88-89 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 90-91 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 92-93 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 94-95 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 96-97 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 98-99 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 100-101 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 102-103 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 104-105 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 106-107 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 108-109 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 110-111 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 112-113 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 114-115 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 116-117 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 118-119 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 120-121 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 122-123 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 124-125 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 126-127 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 128-129 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 130-131 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 132-133 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 134-135 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 136-137 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 138-139 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 140-141 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 142-143 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 144-145 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 146-147 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 148-149 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 150-151 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 152-153 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 154-155 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 156-157 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 158-159 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 160-161 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 162-163 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 164-165 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 166-167 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 168-169 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 170-171 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 172-173 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>AP 174-175 Res</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Passive RTS Count</name>
 			<type>U16</type>
 		</parameter>
 		<parameter>
-			<name>Log Over Flow Counter</name>
+			<name>Watch Point In Use</name>
 			<type>U16</type>
 		</parameter>
 		<parameter>
-			<name>Log Enabled</name>
-			<type>U8</type>
+			<name>Active Action Points</name>
+			<type>U16</type>
 		</parameter>
 		<parameter>
-			<name>App ID 0</name>
+			<name>AP Sample Count</name>
 			<type>U32</type>
 		</parameter>
 		<parameter>
-			<name>App Msg Sent Counter 0</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 0</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 0</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 1</name>
+			<name>Monitored Msg Count</name>
 			<type>U32</type>
 		</parameter>
 		<parameter>
-			<name>App Msg Sent Counter 1</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 1</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 1</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 2</name>
+			<name>RTS Exec Count</name>
 			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 2</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 2</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 2</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 3</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 3</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 3</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 3</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 4</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 4</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 4</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 4</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 5</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 5</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 5</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 5</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 6</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 6</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 6</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 6</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 7</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 7</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 7</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 7</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 8</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 8</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 8</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 8</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 9</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 9</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 9</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 9</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 10</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 10</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 10</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 10</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 11</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 11</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 11</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 11</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 12</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 12</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 12</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 12</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 13</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 13</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 13</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 13</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 14</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 14</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 14</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 14</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 15</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 15</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 15</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 15</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 16</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 16</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 16</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 16</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 17</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 17</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 17</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 17</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 18</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 18</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 18</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 18</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 19</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 19</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 19</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 19</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 20</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 20</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 20</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 20</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 21</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 21</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 21</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 21</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 22</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 22</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 22</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 22</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 23</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 23</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 23</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 23</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 24</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 24</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 24</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 24</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 25</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 25</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 25</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 25</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 26</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 26</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 26</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 26</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 27</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 27</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 27</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 27</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 28</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 28</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 28</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 28</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 29</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 29</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 29</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 29</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 30</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 30</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 30</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 30</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>App ID 31</name>
-			<type>U32</type>
-		</parameter>
-		<parameter>
-			<name>App Msg Sent Counter 31</name>
-			<type>U16</type>
-		</parameter>
-		<parameter>
-			<name>App Enabled Status 31</name>
-			<type>U8</type>
-		</parameter>
-		<parameter>
-			<name>Spare 31</name>
-			<type>U8</type>
 		</parameter>
 	</telemetry>
 </channel>
