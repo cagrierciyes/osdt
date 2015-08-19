@@ -3,6 +3,10 @@ package network;
 
 import com.rbnb.sapi.*;
 import java.util.*;
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
@@ -56,7 +60,29 @@ public class source {
 		}
 
 	}
-	public void send(byte[] rawdata , int app_id)   //send data to rbnb server
+	
+	public short bytesToShort(byte[] bytes) {
+	     return ByteBuffer.wrap(bytes).order(ByteOrder.LITTLE_ENDIAN).getShort();
+	}
+	
+	public byte[] shortToBytes(short value) {
+	    return ByteBuffer.allocate(2).order(ByteOrder.LITTLE_ENDIAN).putShort(value).array();
+	}
+	
+	public static int bytesToInt(byte[] b) {
+	    final ByteBuffer bb = ByteBuffer.wrap(b);
+	    bb.order(ByteOrder.LITTLE_ENDIAN);
+	    return bb.getInt();
+	}
+
+	public static byte[] intToBytes(int i) {
+	    final ByteBuffer bb = ByteBuffer.allocate(Integer.SIZE / Byte.SIZE);
+	    bb.order(ByteOrder.LITTLE_ENDIAN);
+	    bb.putInt(i);
+	    return bb.array();
+	}
+
+	public void send(byte[] rawdata , int app_id) throws IOException   //send data to rbnb server
 	{
 		int pointer = 0;
 		int i = 0;
@@ -80,24 +106,14 @@ public class source {
 					{			
 						short[] array = new short[1];
 						
-						if(xmlparser.get_endianfields().get(i).get(j).equals("empty") )
-						{
-							if(xmlparser.get_defaultendians().get(i).equals("LE") )
-							{
-								array[0] =  (short)((byte)rawdata[pointer] & xmlparser.get_parametermasks().get(i).get(j));
-							}
-							else
-							{
-								array[0] =  (short)((byte)rawdata[pointer] & xmlparser.get_parametermasks().get(i).get(j));
-							}
+						if(xmlparser.get_endianfields().get(i).get(j).equals("LE") || ( xmlparser.get_endianfields().get(i).get(j).equals("empty") && xmlparser.get_defaultendians().get(i).equals("LE"))){
+							array[0] = (short) ((short) (rawdata[pointer] & 0xFF) & (xmlparser.get_parametermasks().get(i).get(j) & 0x000000FF));
+							
+							System.out.println("LE USHORT: " + array[0]);
 						}
-						
-						else
-						{
-							if(xmlparser.get_endianfields().get(i).get(j).equals("LE") )
-								array[0] =  (short)((byte)rawdata[pointer] & xmlparser.get_parametermasks().get(i).get(j));
-							else
-								array[0] =  (short)((byte)rawdata[pointer] & xmlparser.get_parametermasks().get(i).get(j));
+						else{
+							array[0] = (short) ((short) (rawdata[pointer] & 0xFF) & (xmlparser.get_parametermasks().get(i).get(j) & 0x000000FF));
+							System.out.println("BE USHORT: " +array[0]);
 						}
 						
 						cMap.PutDataAsInt16(channelindexes.get(i).get(j),array);
@@ -113,28 +129,16 @@ public class source {
 					try
 					{
 						int[] array = new int[1];
-						
-						if(xmlparser.get_endianfields().get(i).get(j).equals("empty") )
-						{
-							if(xmlparser.get_defaultendians().get(i).equals("LE") )
-							{
-								array[0] = (int)(((int)((int)rawdata[pointer + 1] << 8 | (int)rawdata[pointer] << 0)  & xmlparser.get_parametermasks().get(i).get(j)));
-							}
-							else
-							{
-								array[0] = (int)(((int)((int)rawdata[pointer] << 8 | (int)rawdata[pointer+1] << 0)  & xmlparser.get_parametermasks().get(i).get(j)));
-							}
+			
+						if(xmlparser.get_endianfields().get(i).get(j).equals("LE") || ( xmlparser.get_endianfields().get(i).get(j).equals("empty") && xmlparser.get_defaultendians().get(i).equals("LE"))){
+							array[0] = (int) (((rawdata[pointer] & 0xFF) + ((rawdata[pointer+1] & 0xFF) << 8)) & (xmlparser.get_parametermasks().get(i).get(j) & 0x0000FFFF));
+							System.out.println("LE USHORT: " + array[0]);
 						}
-						
-						else
-						{
-							if(xmlparser.get_endianfields().get(i).get(j).equals("LE") )
-								array[0] = (int)(((int)((int)rawdata[pointer + 1] << 8 | (int)rawdata[pointer] << 0)  & xmlparser.get_parametermasks().get(i).get(j)));
-							else
-								array[0] = (int)(((int)((int)rawdata[pointer] << 8 | (int)rawdata[pointer+1] << 0)  & xmlparser.get_parametermasks().get(i).get(j)));
+						else{
+							array[0] = (int) ((((rawdata[pointer] & 0xFF) << 8) + (rawdata[pointer+1] & 0xFF)) & (xmlparser.get_parametermasks().get(i).get(j) & 0x0000FFFF));
+							System.out.println("BE USHORT: " +array[0]);
 						}
-						
-						
+					
 						cMap.PutDataAsInt32(channelindexes.get(i).get(j),array);
 						//cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
 						source.Flush(cMap);
@@ -148,27 +152,16 @@ public class source {
 					{
 						long[] array = new long[1];
 						
-						if(xmlparser.get_endianfields().get(i).get(j).equals("empty") )
-						{
-							if(xmlparser.get_defaultendians().get(i).equals("LE") )
-							{
-								array[0] = (long)(((long)((long)rawdata[pointer + 3] << 24 | (long)rawdata[pointer + 2] << 16| (long)rawdata[pointer + 1] << 8| (long)rawdata[pointer] << 0)  & xmlparser.get_parametermasks().get(i).get(j)));
-							}
-							else
-							{
-								array[0] = (long)(((long)((long)rawdata[pointer] << 24 | (long)rawdata[pointer+1] << 16| (long)rawdata[pointer+2] << 8| (long)rawdata[pointer+3] << 0)  & xmlparser.get_parametermasks().get(i).get(j)));
-							}
+						if(xmlparser.get_endianfields().get(i).get(j).equals("LE") || ( xmlparser.get_endianfields().get(i).get(j).equals("empty") && xmlparser.get_defaultendians().get(i).equals("LE"))){
+							array[0] = (long) (((rawdata[pointer] & 0xFF) + ((rawdata[pointer+1] & 0xFF) << 8)+ ((rawdata[pointer+2] & 0xFF) << 16)+ ((rawdata[pointer+3] & 0xFF) << 24)) & (xmlparser.get_parametermasks().get(i).get(j) & 0xFFFFFFFF));
+							System.out.println("LE UINT: " + array[0]);
 						}
-						
-						else
-						{
-							if(xmlparser.get_endianfields().get(i).get(j).equals("LE") )
-								array[0] = (long)(((long)((long)rawdata[pointer + 3] << 24 | (long)rawdata[pointer + 2] << 16| (long)rawdata[pointer + 1] << 8| (long)rawdata[pointer] << 0)  & xmlparser.get_parametermasks().get(i).get(j)));
-							else
-								array[0] = (long)(((long)((long)rawdata[pointer] << 24 | (long)rawdata[pointer+1] << 16| (long)rawdata[pointer+2] << 8| (long)rawdata[pointer+3] << 0)  & xmlparser.get_parametermasks().get(i).get(j)));
+						else{
+							array[0] = (long) (((rawdata[pointer+3] & 0xFF) + ((rawdata[pointer+2] & 0xFF) << 8)+ ((rawdata[pointer+1] & 0xFF) << 16)+ ((rawdata[pointer] & 0xFF) << 24)) & (xmlparser.get_parametermasks().get(i).get(j) & 0xFFFFFFFF));
+							System.out.println("BE UINT: " +array[0]);
 						}
-						
-						
+
+
 						cMap.PutDataAsInt64(channelindexes.get(i).get(j),array);
 						//cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
 						source.Flush(cMap);
@@ -204,10 +197,10 @@ public class source {
 				else if(xmlparser.get_parametertypes().get(i).get(j).equals("FLOAT") ) // FLOAT
 				{
 					try{
-						
+
 						float[] array = new float[1];
 						byte[] bytes = { rawdata[pointer] , rawdata[pointer + 1] , rawdata[pointer + 2] , rawdata[pointer + 3]};
-						
+
 						if(xmlparser.get_endianfields().get(i).get(j).equals("empty") )
 						{
 							if(xmlparser.get_defaultendians().get(i).equals("LE") )
@@ -219,7 +212,7 @@ public class source {
 								array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).getFloat();
 							}
 						}
-						
+
 						else
 						{
 							if(xmlparser.get_endianfields().get(i).get(j).equals("LE") )
@@ -227,10 +220,7 @@ public class source {
 							else
 								array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).getFloat();
 						}
-					
-
-					
-					
+						
 						cMap.PutDataAsFloat32(channelindexes.get(i).get(j),array);
 						//cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
 						source.Flush(cMap);
@@ -246,7 +236,7 @@ public class source {
 
 						double[] array = new double[1];
 						byte[] bytes = { rawdata[pointer] , rawdata[pointer + 1] , rawdata[pointer + 2] , rawdata[pointer + 3] , rawdata[pointer + 4] , rawdata[pointer + 5] , rawdata[pointer + 6] , rawdata[pointer + 7]}; 
-						
+
 						if(xmlparser.get_endianfields().get(i).get(j).equals("empty") )
 						{
 							if(xmlparser.get_defaultendians().get(i).equals("LE") )
@@ -258,7 +248,7 @@ public class source {
 								array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).getDouble();
 							}
 						}
-						
+
 						else
 						{
 							if(xmlparser.get_endianfields().get(i).get(j).equals("LE") )
@@ -266,8 +256,8 @@ public class source {
 							else
 								array[0] = ByteBuffer.wrap(bytes).order(ByteOrder.BIG_ENDIAN).getDouble();
 						}
-						
-					
+
+
 						cMap.PutDataAsFloat64(channelindexes.get(i).get(j),array);
 						//cMap.PutUserInfo(channelindexes.get(i).get(j) , xmlparser.get_parameterinfos().get(i).get(j));
 						source.Flush(cMap);

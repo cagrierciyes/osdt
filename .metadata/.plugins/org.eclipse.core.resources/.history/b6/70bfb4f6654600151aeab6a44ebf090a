@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+type: S8, S16, S32, U8, U16, U32, DOUBLE(8 byte), FLOAT(4 byte), STRING, TIME(6 byte)
+future features: mask & hex-dec & binary & unit
+<mask>0x3F</mask>
+<info>""</info>
+-->
+<channel>
+	<name>EVS</name>
+	<configs>
+		<config>
+			<name>CPU1</name>
+			<cmdmid>0x1817</cmdmid>
+			<tlmmid>0x0700</tlmmid>
+			<tlmmidx>0xF801</tlmmidx>
+			<endian>LE</endian>
+		</config>
+	</configs>
+	<commandoffset>+0</commandoffset>
+	<commands>
+		<command>
+			<name>CFE_EVS_NOP_CC</name>
+		</command>
+		<command>
+			<name>CFE_EVS_RESET_STATUS_CC</name>
+		</command>
+	</commands>
+	<telemetry>
+		<parameter>
+			<name>App Id</name>
+			<type>U16</type>
+			<endian>BE</endian>
+		</parameter>
+		<parameter>
+			<name>Sequence Count</name>
+			<type>U16</type>
+			<mask>0x3FFF</mask>
+			<endian>BE</endian>
+		</parameter>
+		<parameter>
+			<name>Length</name>
+			<type>U16</type>
+			<endian>BE</endian>
+		</parameter>
+		<parameter>
+			<name>Time</name>
+			<type>TIME</type>
+		</parameter>
+		<parameter>
+			<name>Command Counter</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Error Counter</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Message Format Mode</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Message Trunc Counter</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Unregister App Counter</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Output Port</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Log Full Flag</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Log Mode</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Message Send Counter</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Log Over Flow Counter</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>Log Enabled</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>App ID 0</name>
+			<type>U32</type>
+		</parameter>
+		<parameter>
+			<name>App Msg Sent Counter 0</name>
+			<type>U16</type>
+		</parameter>
+		<parameter>
+			<name>App Enabled Status 0</name>
+			<type>U8</type>
+		</parameter>
+		<parameter>
+			<name>Spare</name>
+			<type>U8</type>
+		</parameter>
+	</telemetry>
+</channel>
