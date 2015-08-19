@@ -16,26 +16,30 @@ public class parsexml {
 	
 	static private Vector<String>  foldernames;
 	static private Vector<Integer> application_ids;
+	static private Vector<String>  defaultendians;
 	static private Vector<Vector<String>> parameternames;
 	static private Vector<Vector<String>> parametertypes;
 	static private Vector<Vector<String>> parameterinfos;
 	static private Vector<Vector<Integer>> parametermasks;
 	static private Vector<Vector<Integer>> parametersizes;
+	static private Vector<Vector<String>> endianfields;
 
 	public parsexml()
 	{
 		foldernames = new Vector<String>();
 		application_ids = new Vector<Integer>(); 
+		defaultendians = new Vector<String>();
 		parameternames = new Vector<Vector<String>>();
 		parametertypes = new Vector<Vector<String>>();
 		parameterinfos = new Vector<Vector<String>>();
 		parametermasks = new Vector<Vector<Integer>>();
 		parametersizes = new Vector<Vector<Integer>>();
+		endianfields = new Vector<Vector<String>>();
 	}
 
 	public  void parse() {
 
-		File folder = new File("config/");
+		File folder = new File("config/");      // searching in current path into the "config" file
 		File[] listOfFiles = folder.listFiles();
 
 		for (File file : listOfFiles) {
@@ -68,6 +72,9 @@ public class parsexml {
 						eElement = (Element) nNode;
 						nNode = eElement.getElementsByTagName("tlmmidx").item(0);
 						application_ids.addElement(ConvertHexaStringtoInteger(nNode.getTextContent()))  ;
+						nNode = eElement.getElementsByTagName("endian").item(0);
+						defaultendians.addElement(nNode.getTextContent());
+						
 						//System.out.println(application_ids.get(application_ids.size() - 1));
 
 					}
@@ -82,6 +89,7 @@ public class parsexml {
 					Vector<String> infos = new Vector<String>();
 					Vector<Integer> masks = new Vector<Integer>();
 					Vector<Integer> sizes = new Vector<Integer>();
+					Vector<String> endians = new Vector<String>();
 
 					for (int temp = 0; temp < nList.getLength(); temp++) 
 					{
@@ -127,6 +135,16 @@ public class parsexml {
 							}
 							else
 								sizes.addElement(0);
+							
+							nList2 = eElement.getElementsByTagName("endian"); //size
+							if(nList2.getLength() != 0)
+							{
+								nNode = nList2.item(0);
+								endians.addElement(nNode.getTextContent());
+
+							}
+							else
+								endians.addElement("empty");
 						}
 					}
 
@@ -135,6 +153,7 @@ public class parsexml {
 					parameterinfos.addElement(infos);
 					parametermasks.addElement(masks);
 					parametersizes.addElement(sizes);
+					endianfields.addElement(endians);
 				}
 
 				catch (Exception e) {
@@ -216,6 +235,16 @@ public class parsexml {
 	public Vector<Vector<Integer>> get_parametersizes()
 	{
 		return parametersizes;
+	}
+	
+	public Vector<Vector<String>> get_endianfields()
+	{
+		return endianfields;
+	}
+	
+	public Vector<String> get_defaultendians()
+	{
+		return defaultendians;
 	}
 
 }
